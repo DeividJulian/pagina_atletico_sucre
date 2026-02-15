@@ -215,7 +215,7 @@ export default function Home() {
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-red-500/10 rounded-full blur-2xl"></div>
 
             {/* VIDEO en lugar del escudo */}
-            <div className="relative w-[380px] h-[380px] overflow-hidden rounded-2xl shadow-2xl border-4 border-white/30 bg-black">
+            <div className="relative w-[300px] h-[380px] overflow-hidden rounded-2xl shadow-2xl border-4 border-white/30 bg-black">
               <video
                 src="/video_presentacion.mp4"
                 className="w-full h-full object-cover"
