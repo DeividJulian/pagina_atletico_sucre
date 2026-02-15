@@ -515,8 +515,8 @@ export default function Home() {
                         className="object-cover group-hover:scale-110 transition-transform duration-700" 
                       />
                     </div>
-                    <h3 className="font-bold text-xl mb-1">Uniforme Arquero</h3>
-                    <p className="text-gray-600 text-sm">Uniforme destinado para arqueros</p>
+                    <h3 className="font-bold text-xl mb-1">Uniforme De Portero</h3>
+                    <p className="text-gray-600 text-sm">Uniforme destinado para Porteros</p>
                     <div className="mt-3 flex justify-between items-center">
                       <span className="text-red-600 font-bold">$50.000</span>
                       <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Completo</span>
