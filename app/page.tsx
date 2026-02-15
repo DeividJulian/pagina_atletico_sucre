@@ -447,9 +447,9 @@ export default function Home() {
                       />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Uniforme Principal</h3>
-                    <p className="text-gray-600 text-sm">Camiseta roja y negra - Pantaloneta negra</p>
+                    <p className="text-gray-600 text-sm">Camiseta blanca - Pantaloneta blanca</p>
                     <div className="mt-3 flex justify-between items-center">
-                      <span className="text-red-600 font-bold">$120.000</span>
+                      <span className="text-red-600 font-bold">$50.000</span>
                       <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Completo</span>
                     </div>
                   </div>
@@ -467,9 +467,9 @@ export default function Home() {
                       />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Uniforme Alternativo</h3>
-                    <p className="text-gray-600 text-sm">Camiseta blanca - Pantaloneta roja</p>
+                    <p className="text-gray-600 text-sm">Camiseta roja - Pantaloneta roja</p>
                     <div className="mt-3 flex justify-between items-center">
-                      <span className="text-red-600 font-bold">$120.000</span>
+                      <span className="text-red-600 font-bold">$50.000</span>
                       <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Completo</span>
                     </div>
                   </div>
@@ -487,9 +487,9 @@ export default function Home() {
                       />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Entrenamiento</h3>
-                    <p className="text-gray-600 text-sm">Camiseta amarilla - Pantaloneta negra</p>
+                    <p className="text-gray-600 text-sm">Camiseta Azul-Pantaloneta Azul</p>
                     <div className="mt-3 flex justify-between items-center">
-                      <span className="text-red-600 font-bold">$95.000</span>
+                      <span className="text-red-600 font-bold">$50.000</span>
                       <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Completo</span>
                     </div>
                   </div>
@@ -507,9 +507,9 @@ export default function Home() {
                       />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Uniforme Arquero</h3>
-                    <p className="text-gray-600 text-sm">Camiseta de arquero - Pantaloneta negra</p>
+                    <p className="text-gray-600 text-sm">Uniforme destinado para arqueros</p>
                     <div className="mt-3 flex justify-between items-center">
-                      <span className="text-red-600 font-bold">$110.000</span>
+                      <span className="text-red-600 font-bold">$50.000</span>
                       <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Completo</span>
                     </div>
                   </div>
@@ -520,16 +520,16 @@ export default function Home() {
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
                     <div className="relative h-64 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl mb-4 overflow-hidden">
                       <Image 
-                        src="/medias.jpeg" 
+                        src="/mochila.jpg" 
                         alt="Medias" 
                         fill 
                         className="object-cover group-hover:scale-110 transition-transform duration-700" 
                       />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Mochila</h3>
-                    <p className="text-gray-600 text-sm">Rojas y negras</p>
+                    <p className="text-gray-600 text-sm">Rojo y negro</p>
                     <div className="mt-3">
-                      <span className="text-red-600 font-bold">$25.000</span>
+                    <span className="text-red-600 font-bold">$?</span>
                     </div>
                   </div>
                 </motion.div>
@@ -546,9 +546,9 @@ export default function Home() {
                       />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Uniforme Alternativo 2</h3>
-                    <p className="text-gray-600 text-sm">Roja o negra</p>
+                    <p className="text-gray-600 text-sm">Uniforme completo</p>
                     <div className="mt-3">
-                      <span className="text-red-600 font-bold">$45.000</span>
+                      <span className="text-red-600 font-bold">$50.000</span>
                     </div>
                   </div>
                 </motion.div>
@@ -557,7 +557,7 @@ export default function Home() {
               {/* Nota sobre uniformes */}
               <div className="mt-10 bg-gradient-to-r from-red-50 to-yellow-50 p-4 rounded-xl border border-red-200">
                 <p className="text-gray-700 text-center">
-                  ⚽ <span className="font-semibold">Nota:</span> Los uniformes se adquieren en Liga Mundial 
+                  ⚽ <span className="font-semibold">Nota:</span> Los uniformes se adquieren en Liga Mundial,Direccion:Calle 24 # 6-91, Ipiales; Nariño
                 </p>
               </div>
             </div>
