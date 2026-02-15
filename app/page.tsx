@@ -46,7 +46,7 @@ export default function Home() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-400 rounded-full blur-md opacity-50"></div>
               <Image
-                src="/escudo.jpeg"
+                src="/escudo1.jpeg"
                 alt="Escudo Atletico Sucre"
                 width={45}
                 height={45}
@@ -409,7 +409,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* SECCIÓN: Uniformes */}
+      {/* SECCIÓN: Uniformes CON IMÁGENES COMPLETAS Y MISMO TAMAÑO */}
       <section id="uniformes" className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -435,11 +435,16 @@ export default function Home() {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {/* Uniforme 1 - Principal */}
+                {/* Uniforme Principal */}
                 <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
-                    <div className="relative h-64 bg-gradient-to-br from-red-600 to-red-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center">
-                      <FaTshirt className="text-white text-6xl opacity-50" />
+                    <div className="relative h-64 bg-gradient-to-br from-red-600 to-red-800 rounded-xl mb-4 overflow-hidden">
+                      <Image 
+                        src="/uniforme_principal.jpeg" 
+                        alt="Uniforme Principal" 
+                        fill 
+                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                      />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Uniforme Principal</h3>
                     <p className="text-gray-600 text-sm">Camiseta roja y negra - Pantaloneta negra</p>
@@ -450,11 +455,16 @@ export default function Home() {
                   </div>
                 </motion.div>
 
-                {/* Uniforme 2 - Alternativo */}
+                {/* Uniforme Alternativo */}
                 <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
-                    <div className="relative h-64 bg-gradient-to-br from-gray-700 to-black rounded-xl mb-4 overflow-hidden flex items-center justify-center">
-                      <FaTshirt className="text-white text-6xl opacity-50" />
+                    <div className="relative h-64 bg-gradient-to-br from-gray-700 to-black rounded-xl mb-4 overflow-hidden">
+                      <Image 
+                        src="/uniforme_alternativo.jpeg" 
+                        alt="Uniforme Alternativo" 
+                        fill 
+                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                      />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Uniforme Alternativo</h3>
                     <p className="text-gray-600 text-sm">Camiseta blanca - Pantaloneta roja</p>
@@ -465,11 +475,16 @@ export default function Home() {
                   </div>
                 </motion.div>
 
-                {/* Uniforme 3 - Entrenamiento */}
+                {/* Uniforme Entrenamiento */}
                 <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
-                    <div className="relative h-64 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-xl mb-4 overflow-hidden flex items-center justify-center">
-                      <FaTshirt className="text-white text-6xl opacity-50" />
+                    <div className="relative h-64 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-xl mb-4 overflow-hidden">
+                      <Image 
+                        src="/uniforme_3.jpeg" 
+                        alt="Uniforme Entrenamiento" 
+                        fill 
+                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                      />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Entrenamiento</h3>
                     <p className="text-gray-600 text-sm">Camiseta amarilla - Pantaloneta negra</p>
@@ -480,13 +495,38 @@ export default function Home() {
                   </div>
                 </motion.div>
 
-                {/* Accesorios - Medias */}
+                {/* Arquero */}
                 <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
-                    <div className="relative h-48 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center">
-                      <FaShoePrints className="text-white text-6xl opacity-50" />
+                    <div className="relative h-64 bg-gradient-to-br from-green-600 to-green-800 rounded-xl mb-4 overflow-hidden">
+                      <Image 
+                        src="/arqueros.jpeg" 
+                        alt="Uniforme Arquero" 
+                        fill 
+                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                      />
                     </div>
-                    <h3 className="font-bold text-xl mb-1">Medias</h3>
+                    <h3 className="font-bold text-xl mb-1">Uniforme Arquero</h3>
+                    <p className="text-gray-600 text-sm">Camiseta de arquero - Pantaloneta negra</p>
+                    <div className="mt-3 flex justify-between items-center">
+                      <span className="text-red-600 font-bold">$110.000</span>
+                      <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Completo</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Medias - CON IMAGEN */}
+                <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
+                  <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
+                    <div className="relative h-64 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl mb-4 overflow-hidden">
+                      <Image 
+                        src="/medias.jpeg" 
+                        alt="Medias" 
+                        fill 
+                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                      />
+                    </div>
+                    <h3 className="font-bold text-xl mb-1">Mochila</h3>
                     <p className="text-gray-600 text-sm">Rojas y negras</p>
                     <div className="mt-3">
                       <span className="text-red-600 font-bold">$25.000</span>
@@ -494,30 +534,21 @@ export default function Home() {
                   </div>
                 </motion.div>
 
-                {/* Accesorios - Pantaloneta */}
+                {/* Pantaloneta - CON IMAGEN */}
                 <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
-                    <div className="relative h-48 bg-gradient-to-br from-red-700 to-red-900 rounded-xl mb-4 overflow-hidden flex items-center justify-center">
-                      <FaTshirt className="text-white text-6xl opacity-50" />
+                    <div className="relative h-64 bg-gradient-to-br from-red-700 to-red-900 rounded-xl mb-4 overflow-hidden">
+                      <Image 
+                        src="/uniforme4.jpeg" 
+                        alt="Pantaloneta" 
+                        fill 
+                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                      />
                     </div>
-                    <h3 className="font-bold text-xl mb-1">Pantaloneta</h3>
+                    <h3 className="font-bold text-xl mb-1">Uniforme Alternativo 2</h3>
                     <p className="text-gray-600 text-sm">Roja o negra</p>
                     <div className="mt-3">
                       <span className="text-red-600 font-bold">$45.000</span>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Accesorios - Buzo */}
-                <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
-                  <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
-                    <div className="relative h-48 bg-gradient-to-br from-black to-gray-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center">
-                      <FaTshirt className="text-white text-6xl opacity-50" />
-                    </div>
-                    <h3 className="font-bold text-xl mb-1">Buzo</h3>
-                    <p className="text-gray-600 text-sm">Negro con detalles rojos</p>
-                    <div className="mt-3">
-                      <span className="text-red-600 font-bold">$85.000</span>
                     </div>
                   </div>
                 </motion.div>
@@ -700,7 +731,7 @@ export default function Home() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full blur-xl opacity-50"></div>
             <Image
-              src="/escudo.jpeg"
+              src="/escudo1.jpeg"
               alt="Escudo"
               width={120}
               height={120}
