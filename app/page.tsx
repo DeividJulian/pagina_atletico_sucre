@@ -1,16 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  FaWhatsapp, FaTrophy, FaUserShield, FaFutbol, FaStar, 
-  FaHeart, FaHandsHelping, FaUsers, FaMedal, FaClock,
-  FaShieldAlt, FaBalanceScale, FaAward, FaChild,
-  FaRegFutbol, FaRunning 
+import {
+  FaWhatsapp,
+  FaTrophy,
+  FaUserShield,
+  FaFutbol,
+  FaStar,
+  FaHeart,
+  FaHandsHelping,
+  FaUsers,
+  FaMedal,
+  FaClock,
+  FaShieldAlt,
+  FaBalanceScale,
+  FaAward,
+  FaChild,
+  FaRegFutbol,
+  FaRunning,
+  FaMoneyBillWave,
+  FaCreditCard,
+  FaTshirt,
+  FaShoePrints
 } from "react-icons/fa";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import Link from "next/link";
-
 
 export default function Home() {
   return (
@@ -23,33 +38,35 @@ export default function Home() {
       {/* Navbar Mejorada */}
       <nav className="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-xl text-white z-50 border-b border-white/10 shadow-2xl">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3"
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-400 rounded-full blur-md opacity-50"></div>
-              <Image 
-                src="/escudo.png"
+              <Image
+                src="/escudo.jpeg"
                 alt="Escudo Atletico Sucre"
                 width={45}
                 height={45}
-                className="rounded-full shadow-lg relative z-10"
+                className="rounded-full shadow-lg relative z-10 object-contain bg-transparent"
               />
             </div>
             <span className="font-black tracking-widest text-sm md:text-base bg-clip-text text-transparent bg-gradient-to-r from-white to-red-200">
               ATLETICO SUCRE
             </span>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="hidden md:flex gap-8 text-sm font-medium"
           >
             {[
               { href: "#filosofia", label: "Filosofia", icon: FaBalanceScale },
+              { href: "#costos", label: "Costos", icon: FaMoneyBillWave },
+              { href: "#uniformes", label: "Uniformes", icon: FaTshirt },
               { href: "#coach", label: "Coach", icon: FaUserShield },
               { href: "#familias", label: "Familias", icon: FaUsers },
               { href: "#contacto", label: "Contacto", icon: FaWhatsapp, isWhatsApp: true },
@@ -72,17 +89,17 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Sección Hero - ATLETICO SUCRE (ya mejorada) */}
+      {/* Sección Hero - ATLETICO SUCRE */}
       <section className="relative mt-20 bg-gradient-to-br from-red-700 via-red-800 to-black text-white px-6 md:px-10 py-16 md:py-24 rounded-b-[80px] shadow-[0_30px_80px_rgba(0,0,0,0.6)] overflow-hidden">
         {/* Elementos decorativos */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,_rgba(255,215,0,0.15),_transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,_rgba(255,255,255,0.1),_transparent_50%)]"></div>
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
-        
+
         {/* Patrón de fondo sutil */}
-        <div className="absolute opacity-5 inset-0" style={{ 
-          backgroundImage: "radial-gradient(circle at 10px 10px, white 2px, transparent 2px)", 
-          backgroundSize: "30px 30px" 
+        <div className="absolute opacity-5 inset-0" style={{
+          backgroundImage: "radial-gradient(circle at 10px 10px, white 2px, transparent 2px)",
+          backgroundSize: "30px 30px"
         }}></div>
 
         <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12 lg:gap-16">
@@ -93,7 +110,7 @@ export default function Home() {
             className="space-y-6"
           >
             <div className="inline-block">
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -101,7 +118,7 @@ export default function Home() {
               >
                 ATLETICO
               </motion.h1>
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -111,14 +128,14 @@ export default function Home() {
               </motion.h1>
             </div>
 
-            <motion.div 
+            <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="w-32 h-1.5 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full"
             ></motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -145,9 +162,9 @@ export default function Home() {
                   <span className="text-sm opacity-80">formando campeones</span>
                 </div>
               </div>
-              
+
               <div className="mt-4 h-1 w-full bg-white/20 rounded-full overflow-hidden">
-                <motion.div 
+                <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 1.5, delay: 1 }}
@@ -156,14 +173,14 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex gap-4 pt-4"
             >
-              <a 
-                href="https://wa.me/573218543957" 
+              <a
+                href="https://wa.me/573218543957"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-semibold rounded-full hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2"
@@ -171,7 +188,7 @@ export default function Home() {
                 <FaWhatsapp className="text-green-700 text-lg" />
                 Contáctanos
               </a>
-              <a 
+              <a
                 href="#filosofia"
                 className="px-6 py-3 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 backdrop-blur-sm hover:border-white/50 transform hover:-translate-y-1"
               >
@@ -189,13 +206,13 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-red-500/20 rounded-full blur-3xl"></div>
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-yellow-400/10 rounded-full blur-2xl"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-red-500/10 rounded-full blur-2xl"></div>
-            
+
             <Image
               src="/escudo.png"
               alt="Escudo Atletico Sucre"
               width={380}
               height={380}
-              className="drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)] hover:scale-110 transition duration-700 relative z-10 animate-float"
+              className="drop-shadow-[0_30px_60px_rgba(0,0,0,0.8)] hover:scale-110 transition duration-700 relative z-10 animate-float object-contain bg-transparent"
               style={{ animation: "float 6s ease-in-out infinite" }}
               priority
             />
@@ -217,19 +234,18 @@ export default function Home() {
         }
       `}</style>
 
-      {/* Formación Integral - Mejorada */}
+      {/* Formación Integral */}
       <section className="px-4 md:px-8 mt-16">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-5xl mx-auto"
         >
           <div className="bg-gradient-to-br from-white to-gray-50 backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-200 hover:shadow-red-200 transition-all duration-500 relative overflow-hidden group">
-            {/* Elementos decorativos */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-red-600/5 to-yellow-400/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
             <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-red-600/5 to-black/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-            
+
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl shadow-lg">
@@ -239,7 +255,7 @@ export default function Home() {
                   Formación Integral
                 </h2>
               </div>
-              
+
               <p className="text-gray-700 leading-relaxed text-lg mb-8">
                 Procesos de entrenamiento para niñas y niños desde los 4 hasta los 16 años.
                 Disciplina, valores y desarrollo deportivo con metodología profesional.
@@ -264,9 +280,9 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Filosofía - Mejorada */}
+      {/* Filosofía */}
       <section id="filosofia" className="px-4 md:px-8 mt-16">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -274,7 +290,7 @@ export default function Home() {
         >
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-60 h-60 bg-gradient-to-br from-red-600/5 to-yellow-400/5 rounded-full blur-3xl"></div>
-            
+
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl shadow-lg">
@@ -317,84 +333,208 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Nuestro Club - Mejorado */}
-      <section className="px-4 md:px-8 mt-16">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-6xl mx-auto"
-        >
-          <h2 className="text-3xl md:text-4xl font-black text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">
-            Nuestro Club
-          </h2>
-          
-          <Swiper spaceBetween={30} slidesPerView={1.2} loop={true} className="px-4">
-            <SwiperSlide>
-              <div className="h-80 bg-gradient-to-br from-black to-gray-800 rounded-3xl shadow-2xl overflow-hidden relative group cursor-pointer">
-                <Image src="/familia_sucre1.jpeg" alt="Familia Atletico Sucre" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-6">
-                  <span className="text-white text-2xl font-bold">Familia Atletico</span>
-                  <p className="text-white/70 text-sm mt-2">Unidos somos más fuertes</p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="h-80 bg-gradient-to-br from-red-600 to-black rounded-3xl shadow-2xl relative group overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10"></div>
-                <div className="relative h-full flex flex-col items-center justify-center p-6 text-center">
-                  <FaTrophy className="text-yellow-400 text-5xl mb-4 group-hover:scale-110 transition-transform" />
-                  <span className="text-white text-2xl font-bold">Equipo Campeón</span>
-                  <p className="text-white/70 mt-2">Múltiples títulos locales y regionales</p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="h-80 bg-gradient-to-br from-gray-800 to-red-700 rounded-3xl shadow-2xl relative group overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10"></div>
-                <div className="relative h-full flex flex-col items-center justify-center p-6 text-center">
-                  <FaRunning className="text-yellow-400 text-5xl mb-4 group-hover:scale-110 transition-transform" />
-                  <span className="text-white text-2xl font-bold">Entrenamiento</span>
-                  <p className="text-white/70 mt-2">Metodología profesional</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </motion.div>
-      </section>
-
-      {/* Somos Competitivos - Mejorado */}
-      <section className="px-4 md:px-8 mt-16">
+      {/* SECCIÓN: Costos */}
+      <section id="costos" className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="bg-gradient-to-br from-red-700 via-red-800 to-black text-white rounded-3xl p-10 shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:scale-[1.02] transition-all duration-500 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_rgba(255,215,0,0.1),_transparent_70%)]"></div>
-            <div className="absolute -right-20 -top-20 w-60 h-60 bg-yellow-400/10 rounded-full blur-3xl group-hover:scale-150 transition-transform"></div>
-            
-            <div className="relative z-10 flex items-start gap-6">
-              <div className="p-4 bg-yellow-400/20 rounded-2xl backdrop-blur-sm">
-                <FaTrophy className="text-5xl text-yellow-400" />
-              </div>
-              <div>
-                <h2 className="font-black text-3xl mb-4">Somos Competitivos</h2>
-                <p className="text-xl opacity-90 mb-6">Participamos en torneos locales y regionales. La mayoría de veces campeones</p>
-                <div className="flex gap-4">
-                  {[1,2,3].map((i) => (
-                    <div key={i} className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
-                  ))}
+          <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
+            <div className="absolute -right-20 -top-20 w-80 h-80 bg-gradient-to-br from-green-500/5 to-blue-500/5 rounded-full blur-3xl"></div>
+
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-3 bg-gradient-to-br from-green-600 to-green-700 rounded-2xl shadow-lg">
+                  <FaMoneyBillWave className="text-white text-2xl" />
                 </div>
+                <h2 className="text-3xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800">
+                  Costos y Pagos
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <motion.div
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-xl border-l-4 border-green-500 relative overflow-hidden group"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-6">
+                      <FaCreditCard className="text-green-600 text-3xl" />
+                      <span className="text-sm font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">Pago único</span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2">Inscripción</h3>
+                    <div className="flex items-end gap-2 mb-4">
+                      <span className="text-5xl font-black text-green-600">$20.000</span>
+                      <span className="text-gray-500 mb-1">COP</span>
+                    </div>
+                    <p className="text-gray-600">Pago único al momento de matricularse</p>
+                    <div className="mt-6 h-1 w-full bg-gradient-to-r from-green-400 to-green-600 rounded-full"></div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-xl border-l-4 border-blue-500 relative overflow-hidden group"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-between mb-6">
+                      <FaClock className="text-blue-600 text-3xl" />
+                      <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">Mensual</span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2">Mensualidad</h3>
+                    <div className="flex items-end gap-2 mb-4">
+                      <span className="text-5xl font-black text-blue-600">$65.000</span>
+                      <span className="text-gray-500 mb-1">COP</span>
+                    </div>
+                    <p className="text-gray-600 font-medium">Se cancela los primeros días del mes</p>
+                    <div className="mt-4 bg-blue-50 p-3 rounded-lg">
+                      <p className="text-sm text-blue-700">⚠️ Importante: Mantener al día para continuar entrenando</p>
+                    </div>
+                    <div className="mt-6 h-1 w-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="mt-8 bg-gradient-to-r from-gray-50 to-white p-4 rounded-xl border border-gray-200">
+                <p className="text-gray-600 text-center">
+                  💳 <span className="font-semibold">Formas de pago:</span> Efectivo o Nequi
+                </p>
               </div>
             </div>
           </div>
         </motion.div>
       </section>
 
-      {/* Coach de Rendimiento - Mejorado */}
+      {/* SECCIÓN: Uniformes */}
+      <section id="uniformes" className="px-4 md:px-8 mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto"
+        >
+          <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
+            <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-gradient-to-br from-red-600/5 to-yellow-400/5 rounded-full blur-3xl"></div>
+
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-3 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl shadow-lg">
+                  <FaTshirt className="text-white text-2xl" />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">
+                  Uniformes
+                </h2>
+              </div>
+
+              <p className="text-gray-700 text-lg mb-10 text-center max-w-2xl mx-auto">
+                Uniformes oficiales del Club Atlético Sucre. Calidad profesional para nuestros deportistas.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Uniforme 1 - Principal */}
+                <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
+                  <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
+                    <div className="relative h-64 bg-gradient-to-br from-red-600 to-red-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+                      <FaTshirt className="text-white text-6xl opacity-50" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-1">Uniforme Principal</h3>
+                    <p className="text-gray-600 text-sm">Camiseta roja y negra - Pantaloneta negra</p>
+                    <div className="mt-3 flex justify-between items-center">
+                      <span className="text-red-600 font-bold">$120.000</span>
+                      <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Completo</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Uniforme 2 - Alternativo */}
+                <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
+                  <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
+                    <div className="relative h-64 bg-gradient-to-br from-gray-700 to-black rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+                      <FaTshirt className="text-white text-6xl opacity-50" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-1">Uniforme Alternativo</h3>
+                    <p className="text-gray-600 text-sm">Camiseta blanca - Pantaloneta roja</p>
+                    <div className="mt-3 flex justify-between items-center">
+                      <span className="text-red-600 font-bold">$120.000</span>
+                      <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Completo</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Uniforme 3 - Entrenamiento */}
+                <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
+                  <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
+                    <div className="relative h-64 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+                      <FaTshirt className="text-white text-6xl opacity-50" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-1">Entrenamiento</h3>
+                    <p className="text-gray-600 text-sm">Camiseta amarilla - Pantaloneta negra</p>
+                    <div className="mt-3 flex justify-between items-center">
+                      <span className="text-red-600 font-bold">$95.000</span>
+                      <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full">Completo</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Accesorios - Medias */}
+                <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
+                  <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
+                    <div className="relative h-48 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+                      <FaShoePrints className="text-white text-6xl opacity-50" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-1">Medias</h3>
+                    <p className="text-gray-600 text-sm">Rojas y negras</p>
+                    <div className="mt-3">
+                      <span className="text-red-600 font-bold">$25.000</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Accesorios - Pantaloneta */}
+                <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
+                  <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
+                    <div className="relative h-48 bg-gradient-to-br from-red-700 to-red-900 rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+                      <FaTshirt className="text-white text-6xl opacity-50" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-1">Pantaloneta</h3>
+                    <p className="text-gray-600 text-sm">Roja o negra</p>
+                    <div className="mt-3">
+                      <span className="text-red-600 font-bold">$45.000</span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Accesorios - Buzo */}
+                <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
+                  <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
+                    <div className="relative h-48 bg-gradient-to-br from-black to-gray-800 rounded-xl mb-4 overflow-hidden flex items-center justify-center">
+                      <FaTshirt className="text-white text-6xl opacity-50" />
+                    </div>
+                    <h3 className="font-bold text-xl mb-1">Buzo</h3>
+                    <p className="text-gray-600 text-sm">Negro con detalles rojos</p>
+                    <div className="mt-3">
+                      <span className="text-red-600 font-bold">$85.000</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Nota sobre uniformes */}
+              <div className="mt-10 bg-gradient-to-r from-red-50 to-yellow-50 p-4 rounded-xl border border-red-200">
+                <p className="text-gray-700 text-center">
+                  ⚽ <span className="font-semibold">Nota:</span> Los uniformes se adquieren en Liga Mundial 
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Coach de Rendimiento */}
       <section id="coach" className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -404,7 +544,7 @@ export default function Home() {
         >
           <div className="bg-gradient-to-br from-black via-gray-900 to-red-800 text-white rounded-3xl p-10 shadow-2xl hover:scale-[1.02] transition-all duration-500 relative overflow-hidden group">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,_rgba(59,130,246,0.1),_transparent_70%)]"></div>
-            
+
             <div className="relative z-10 flex items-start gap-6">
               <div className="p-4 bg-blue-400/20 rounded-2xl backdrop-blur-sm">
                 <FaUserShield className="text-5xl text-blue-400" />
@@ -412,8 +552,8 @@ export default function Home() {
               <div>
                 <h2 className="font-black text-3xl mb-4">Coach de Rendimiento</h2>
                 <p className="text-lg opacity-90 leading-relaxed mb-6">
-                  El Coach de Rendimiento debe ser ejemplo de liderazgo, disciplina y ética. 
-                  Diseña entrenamientos estructurados, prioriza la salud física y emocional del deportista 
+                  El Coach de Rendimiento debe ser ejemplo de liderazgo, disciplina y ética.
+                  Diseña entrenamientos estructurados, prioriza la salud física y emocional del deportista
                   y fortalece el sentido de pertenencia.
                 </p>
                 <div className="bg-gradient-to-r from-yellow-400/20 to-transparent p-4 rounded-xl border-l-4 border-yellow-400">
@@ -427,7 +567,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Deberes de las Familias - Mejorado */}
+      {/* Deberes de las Familias */}
       <section id="familias" className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -437,7 +577,7 @@ export default function Home() {
         >
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
             <div className="absolute -left-20 -bottom-20 w-60 h-60 bg-gradient-to-br from-red-600/5 to-yellow-400/5 rounded-full blur-3xl"></div>
-            
+
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl shadow-lg">
@@ -476,11 +616,81 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Nuestro Club - Carrusel con imagen de equipo campeón y video de entrenamiento */}
+      <section className="px-4 md:px-8 mt-16 mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto"
+        >
+          <h2 className="text-3xl md:text-4xl font-black text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">
+            Nuestro Club
+          </h2>
+
+          <Swiper spaceBetween={30} slidesPerView={1.2} loop={true} className="px-4">
+            {/* Slide 1 - Familia Atletico */}
+            <SwiperSlide>
+              <div className="h-80 bg-gradient-to-br from-black to-gray-800 rounded-3xl shadow-2xl overflow-hidden relative group cursor-pointer">
+                <Image src="/familia_sucre1.jpeg" alt="Familia Atletico Sucre" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <span className="text-white text-2xl font-bold">Familia Atletico Sucre</span>
+                  <p className="text-white/70 text-sm mt-2">Más que jugadores somos una familia, más que un equipo somos caballeros en la victoria y en la derrota </p>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            {/* Slide 2 - Equipo Campeón (con imagen) */}
+            <SwiperSlide>
+              <div className="h-80 rounded-3xl shadow-2xl overflow-hidden relative group cursor-pointer">
+                <Image 
+                  src="/equipo.jpeg" 
+                  alt="Equipo Campeón" 
+                  fill 
+                  className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <span className="text-white text-2xl font-bold">Equipo Sub 8</span>
+                  <p className="text-white/70 text-sm mt-2">Jugamos con el corazón, entrenamos con disciplina y vivivmos con respeto</p>
+                </div>
+                <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">
+                  Categoria 2017
+                </div>
+              </div>
+            </SwiperSlide>
+
+            {/* Slide 3 - Entrenamiento (con video) */}
+            <SwiperSlide>
+              <div className="h-80 rounded-3xl shadow-2xl overflow-hidden relative group">
+                <video 
+                  src="/entrenamiento.mp4" 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <span className="text-white text-2xl font-bold">Entrenamiento</span>
+                  <p className="text-white/70 text-sm mt-2">Metodología profesional</p>
+                </div>
+                <div className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+                  <span>▶</span> ENTRENAMIENTO
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </motion.div>
+      </section>
+
       {/* Footer Mejorado */}
       <footer id="contacto" className="bg-gradient-to-br from-black via-gray-900 to-red-900 text-white text-center py-16 mt-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.05),_transparent_70%)]"></div>
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <motion.div
             initial={{ scale: 0 }}
@@ -489,17 +699,17 @@ export default function Home() {
             className="w-32 h-32 mx-auto mb-8 relative"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full blur-xl opacity-50"></div>
-            <Image 
-              src="/escudo.png" 
-              alt="Escudo" 
-              width={120} 
-              height={120} 
-              className="relative z-10 drop-shadow-2xl animate-float"
+            <Image
+              src="/escudo.jpeg"
+              alt="Escudo"
+              width={120}
+              height={120}
+              className="relative z-10 drop-shadow-2xl animate-float object-contain bg-transparent"
               style={{ animation: "float 6s ease-in-out infinite" }}
             />
           </motion.div>
 
-          <motion.h3 
+          <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-3xl font-black mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-red-200"
@@ -507,7 +717,7 @@ export default function Home() {
             Club Atlético Sucre
           </motion.h3>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-xl mb-6 text-white/80"
@@ -515,7 +725,7 @@ export default function Home() {
             "Formando campeones dentro y fuera de la cancha"
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="flex justify-center gap-6 mb-8"
@@ -537,7 +747,7 @@ export default function Home() {
             ))}
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-white/60 border-t border-white/10 pt-8"
