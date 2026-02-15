@@ -542,7 +542,7 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-white/60 border-t border-white/10 pt-8"
           >
-            <div>© 2025 Club Atlético Sucre</div>
+            <div>© 2026 Club Atlético Sucre</div>
             <div>Ipiales - Nariño</div>
             <div>Todos los derechos reservados</div>
           </motion.div>
