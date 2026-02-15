@@ -683,11 +683,11 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6">
-                  <span className="text-white text-2xl font-bold">Equipo Sub 8</span>
+                  <span className="text-white text-2xl font-bold">Equipo Sub 7</span>
                   <p className="text-white/70 text-sm mt-2">Jugamos con el corazón, entrenamos con disciplina y vivivmos con respeto</p>
                 </div>
                 <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">
-                  Categoria 2017
+                  Categoria 2018
                 </div>
               </div>
             </SwiperSlide>
