@@ -430,7 +430,7 @@ export default function Home() {
             {/* Juan Pablo Jiménez */}
             <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
               <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
-                <Image src="/juan_pablo_jimenez.jpg" alt="Juan Pablo Jiménez" width={96} height={96} className="object-cover w-full h-full" />
+                <Image src="/juan_pablo_jimenez.jpeg" alt="Juan Pablo Jiménez" width={96} height={96} className="object-cover w-full h-full" />
               </div>
               <h3 className="font-bold text-lg text-white mb-1">Juan Pablo Jiménez</h3>
               <span className="text-red-400 text-sm font-semibold block mb-4">Preparador de Porteros</span>
