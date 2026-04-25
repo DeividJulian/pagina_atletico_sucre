@@ -96,14 +96,11 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Sección Hero - ATLETICO SUCRE CON VIDEO */}
+      {/* Sección Hero */}
       <section className="relative mt-20 bg-gradient-to-br from-red-700 via-red-800 to-black text-white px-6 md:px-10 py-16 md:py-24 rounded-b-[80px] shadow-[0_30px_80px_rgba(0,0,0,0.6)] overflow-hidden">
-        {/* Elementos decorativos */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,_rgba(255,215,0,0.15),_transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,_rgba(255,255,255,0.1),_transparent_50%)]"></div>
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
-
-        {/* Patrón de fondo sutil */}
         <div className="absolute opacity-5 inset-0" style={{
           backgroundImage: "radial-gradient(circle at 10px 10px, white 2px, transparent 2px)",
           backgroundSize: "30px 30px"
@@ -169,7 +166,6 @@ export default function Home() {
                   <span className="text-sm opacity-80">formando campeones</span>
                 </div>
               </div>
-
               <div className="mt-4 h-1 w-full bg-white/20 rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
@@ -213,8 +209,6 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-red-500/20 rounded-full blur-3xl"></div>
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-yellow-400/10 rounded-full blur-2xl"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-red-500/10 rounded-full blur-2xl"></div>
-
-            {/* VIDEO en lugar del escudo */}
             <div className="relative w-[300px] h-[380px] overflow-hidden rounded-2xl shadow-2xl border-4 border-white/30 bg-black">
               <video
                 src="/video_presentacion.mp4"
@@ -254,7 +248,6 @@ export default function Home() {
           <div className="bg-gradient-to-br from-white to-gray-50 backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-200 hover:shadow-red-200 transition-all duration-500 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-red-600/5 to-yellow-400/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
             <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-red-600/5 to-black/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl shadow-lg">
@@ -264,13 +257,11 @@ export default function Home() {
                   Formación Integral
                 </h2>
               </div>
-
               <p className="text-gray-700 leading-relaxed text-lg mb-8">
                 Procesos de entrenamiento para niñas y niños desde los 4 hasta los 16 años.
                 Disciplina, valores y desarrollo deportivo con metodología profesional.
                 Formamos técnica, táctica, mentalidad y carácter.
               </p>
-
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
                   { icon: FaChild, label: "Desde 4 años" },
@@ -299,7 +290,6 @@ export default function Home() {
         >
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-60 h-60 bg-gradient-to-br from-red-600/5 to-yellow-400/5 rounded-full blur-3xl"></div>
-
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl shadow-lg">
@@ -309,12 +299,10 @@ export default function Home() {
                   Filosofía Atletico Sucre
                 </h2>
               </div>
-
               <p className="text-gray-700 leading-relaxed text-lg mb-8">
                 No solo formamos futbolistas, formamos personas íntegras.
                 Nuestra identidad se basa en la unión, el respeto, la disciplina y la excelencia.
               </p>
-
               <div className="grid md:grid-cols-3 gap-6">
                 {[
                   { icon: FaHeart, title: "Juego limpio", desc: "Respeto total", color: "red" },
@@ -342,7 +330,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* SECCIÓN: Costos */}
+      {/* Costos */}
       <section id="costos" className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -352,7 +340,6 @@ export default function Home() {
         >
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
             <div className="absolute -right-20 -top-20 w-80 h-80 bg-gradient-to-br from-green-500/5 to-blue-500/5 rounded-full blur-3xl"></div>
-
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-green-600 to-green-700 rounded-2xl shadow-lg">
@@ -362,7 +349,6 @@ export default function Home() {
                   Costos y Pagos
                 </h2>
               </div>
-
               <div className="grid md:grid-cols-2 gap-8">
                 <motion.div
                   whileHover={{ scale: 1.03, y: -5 }}
@@ -383,7 +369,6 @@ export default function Home() {
                     <div className="mt-6 h-1 w-full bg-gradient-to-r from-green-400 to-green-600 rounded-full"></div>
                   </div>
                 </motion.div>
-
                 <motion.div
                   whileHover={{ scale: 1.03, y: -5 }}
                   className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-xl border-l-4 border-blue-500 relative overflow-hidden group"
@@ -407,7 +392,6 @@ export default function Home() {
                   </div>
                 </motion.div>
               </div>
-
               <div className="mt-8 bg-gradient-to-r from-gray-50 to-white p-4 rounded-xl border border-gray-200">
                 <p className="text-gray-600 text-center">
                   💳 <span className="font-semibold">Formas de pago:</span> Efectivo o Nequi
@@ -418,7 +402,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* SECCIÓN: Uniformes */}
+      {/* Uniformes */}
       <section id="uniformes" className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -428,7 +412,6 @@ export default function Home() {
         >
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
             <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-gradient-to-br from-red-600/5 to-yellow-400/5 rounded-full blur-3xl"></div>
-
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl shadow-lg">
@@ -438,22 +421,14 @@ export default function Home() {
                   Uniformes
                 </h2>
               </div>
-
               <p className="text-gray-700 text-lg mb-10 text-center max-w-2xl mx-auto">
                 Uniformes oficiales del Club Atlético Sucre. Calidad profesional para nuestros deportistas.
               </p>
-
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {/* Uniforme Principal */}
                 <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
                     <div className="relative h-64 bg-gradient-to-br from-red-600 to-red-800 rounded-xl mb-4 overflow-hidden">
-                      <Image 
-                        src="/uniforme_principal.jpeg" 
-                        alt="Uniforme Principal" 
-                        fill 
-                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                      />
+                      <Image src="/uniforme_principal.jpeg" alt="Uniforme Principal" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Uniforme Principal</h3>
                     <p className="text-gray-600 text-sm">Camiseta blanca - Pantaloneta blanca</p>
@@ -463,17 +438,10 @@ export default function Home() {
                     </div>
                   </div>
                 </motion.div>
-
-                {/* Uniforme Alternativo */}
                 <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
                     <div className="relative h-64 bg-gradient-to-br from-gray-700 to-black rounded-xl mb-4 overflow-hidden">
-                      <Image 
-                        src="/uniforme_alternativo.jpeg" 
-                        alt="Uniforme Alternativo" 
-                        fill 
-                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                      />
+                      <Image src="/uniforme_alternativo.jpeg" alt="Uniforme Alternativo" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Uniforme Alternativo</h3>
                     <p className="text-gray-600 text-sm">Camiseta roja - Pantaloneta roja</p>
@@ -483,17 +451,10 @@ export default function Home() {
                     </div>
                   </div>
                 </motion.div>
-
-                {/* Uniforme Entrenamiento */}
                 <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
                     <div className="relative h-64 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-xl mb-4 overflow-hidden">
-                      <Image 
-                        src="/uniforme_3.jpeg" 
-                        alt="Uniforme Entrenamiento" 
-                        fill 
-                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                      />
+                      <Image src="/uniforme_3.jpeg" alt="Uniforme Entrenamiento" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Entrenamiento</h3>
                     <p className="text-gray-600 text-sm">Camiseta Azul-Pantaloneta Azul</p>
@@ -503,17 +464,10 @@ export default function Home() {
                     </div>
                   </div>
                 </motion.div>
-
-                {/* Arquero */}
                 <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
                     <div className="relative h-64 bg-gradient-to-br from-green-600 to-green-800 rounded-xl mb-4 overflow-hidden">
-                      <Image 
-                        src="/arqueros.jpeg" 
-                        alt="Uniforme Arquero" 
-                        fill 
-                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                      />
+                      <Image src="/arqueros.jpeg" alt="Uniforme Arquero" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Uniforme De Portero</h3>
                     <p className="text-gray-600 text-sm">Uniforme destinado para Porteros</p>
@@ -523,36 +477,22 @@ export default function Home() {
                     </div>
                   </div>
                 </motion.div>
-
-                {/* Mochila */}
                 <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
                     <div className="relative h-64 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl mb-4 overflow-hidden">
-                      <Image 
-                        src="/mochila.jpg" 
-                        alt="Mochila" 
-                        fill 
-                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                      />
+                      <Image src="/mochila.jpg" alt="Mochila" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Mochila</h3>
                     <p className="text-gray-600 text-sm">Rojo y negro</p>
                     <div className="mt-3">
-                    <span className="text-red-600 font-bold">$?</span>
+                      <span className="text-red-600 font-bold">$?</span>
                     </div>
                   </div>
                 </motion.div>
-
-                {/* Uniforme Alternativo 2 */}
                 <motion.div whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200">
                     <div className="relative h-64 bg-gradient-to-br from-red-700 to-red-900 rounded-xl mb-4 overflow-hidden">
-                      <Image 
-                        src="/uniforme4.jpeg" 
-                        alt="Uniforme Alternativo 2" 
-                        fill 
-                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                      />
+                      <Image src="/uniforme4.jpeg" alt="Uniforme Alternativo 2" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Uniforme Alternativo 2</h3>
                     <p className="text-gray-600 text-sm">Uniforme completo</p>
@@ -562,8 +502,6 @@ export default function Home() {
                   </div>
                 </motion.div>
               </div>
-
-              {/* Nota sobre uniformes */}
               <div className="mt-10 bg-gradient-to-r from-red-50 to-yellow-50 p-4 rounded-xl border border-red-200">
                 <p className="text-gray-700 text-center">
                   ⚽ <span className="font-semibold">Nota:</span> Los uniformes se adquieren en Liga Mundial, Direccion: Calle 24 # 6-91, Ipiales; Nariño
@@ -574,7 +512,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* NUEVA SECCIÓN: Horarios de Entrenamiento */}
+      {/* Horarios */}
       <section id="horarios" className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -585,7 +523,6 @@ export default function Home() {
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
             <div className="absolute -right-20 -top-20 w-80 h-80 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
             <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-gradient-to-br from-yellow-500/5 to-red-500/5 rounded-full blur-3xl"></div>
-
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-lg">
@@ -595,24 +532,17 @@ export default function Home() {
                   Horarios de Entrenamiento
                 </h2>
               </div>
-
               <p className="text-gray-700 text-lg mb-10 text-center max-w-3xl mx-auto">
                 Entrenamos toda la semana con horarios flexibles para que puedas compaginar el fútbol con tus estudios.
               </p>
-
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Horarios Mañana */}
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-xl border-l-4 border-amber-500"
-                >
+                <motion.div whileHover={{ scale: 1.02 }} className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-xl border-l-4 border-amber-500">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-2 bg-amber-500 rounded-lg">
                       <FaSun className="text-white text-xl" />
                     </div>
                     <h3 className="text-2xl font-bold text-amber-700">Horario Mañana</h3>
                   </div>
-
                   <div className="space-y-4">
                     {[
                       { day: "Martes", time: "8:00 AM - 10:00 AM" },
@@ -631,19 +561,13 @@ export default function Home() {
                   </div>
                   <p className="mt-4 text-sm text-gray-500 italic">Ideal para quienes estudian en la tarde</p>
                 </motion.div>
-
-                {/* Horarios Tarde */}
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-6 shadow-xl border-l-4 border-indigo-500"
-                >
+                <motion.div whileHover={{ scale: 1.02 }} className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-6 shadow-xl border-l-4 border-indigo-500">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-2 bg-indigo-500 rounded-lg">
                       <FaMoon className="text-white text-xl" />
                     </div>
                     <h3 className="text-2xl font-bold text-indigo-700">Horario Tarde</h3>
                   </div>
-
                   <div className="space-y-4">
                     {[
                       { day: "Martes", time: "3:00 PM - 5:30 PM" },
@@ -663,7 +587,6 @@ export default function Home() {
                   <p className="mt-4 text-sm text-gray-500 italic">Perfecto para quienes estudian en la mañana</p>
                 </motion.div>
               </div>
-
               <div className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-xl border border-blue-200">
                 <p className="text-gray-700 text-center flex items-center justify-center gap-2">
                   <FaClock className="text-blue-500" />
@@ -675,7 +598,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* NUEVA SECCIÓN: Lugares de Entrenamiento */}
+      {/* Lugares */}
       <section id="lugares" className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -686,7 +609,6 @@ export default function Home() {
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
             <div className="absolute -right-20 -top-20 w-80 h-80 bg-gradient-to-br from-green-500/5 to-emerald-500/5 rounded-full blur-3xl"></div>
             <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-gradient-to-br from-red-500/5 to-yellow-500/5 rounded-full blur-3xl"></div>
-
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl shadow-lg">
@@ -696,20 +618,13 @@ export default function Home() {
                   Lugares de Entrenamiento
                 </h2>
               </div>
-
               <p className="text-gray-700 text-lg mb-10 text-center max-w-3xl mx-auto">
                 Contamos con dos sedes perfectamente equipadas para que nuestros deportistas entrenen en las mejores condiciones.
               </p>
-
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Grupo Cabal */}
-                <motion.div
-                  whileHover={{ scale: 1.03, y: -5 }}
-                  className="group cursor-pointer"
-                >
+                <motion.div whileHover={{ scale: 1.03, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 h-full">
                     <div className="relative h-48 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl mb-4 overflow-hidden">
-                      {/* Imagen de Grupo Cabal - puedes reemplazar con imagen real */}
                       <div className="absolute inset-0 flex items-center justify-center bg-blue-600">
                         <div className="text-center text-white">
                           <FaFutbol className="text-6xl mx-auto mb-2 opacity-50" />
@@ -732,20 +647,14 @@ export default function Home() {
                         <span>Excelente para entrenamientos</span>
                       </div>
                     </div>
-                    <div className="mt-4 flex items-center justify-between">
+                    <div className="mt-4">
                       <span className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Sede Principal</span>
                     </div>
                   </div>
                 </motion.div>
-
-                {/* Colegio Seminario */}
-                <motion.div
-                  whileHover={{ scale: 1.03, y: -5 }}
-                  className="group cursor-pointer"
-                >
+                <motion.div whileHover={{ scale: 1.03, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 h-full">
                     <div className="relative h-48 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl mb-4 overflow-hidden">
-                      {/* Imagen de Colegio Seminario - puedes reemplazar con imagen real */}
                       <div className="absolute inset-0 flex items-center justify-center bg-purple-600">
                         <div className="text-center text-white">
                           <FaSchool className="text-6xl mx-auto mb-2 opacity-50" />
@@ -768,14 +677,12 @@ export default function Home() {
                         <span>Espacio amplio y zonas verdes</span>
                       </div>
                     </div>
-                    <div className="mt-4 flex items-center justify-between">
+                    <div className="mt-4">
                       <span className="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Sede Alterna</span>
                     </div>
                   </div>
                 </motion.div>
               </div>
-
-              {/* Mapa o información adicional */}
               <div className="mt-10 bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl border border-green-200">
                 <p className="text-gray-700 text-center flex items-center justify-center gap-2">
                   <FaMapMarkerAlt className="text-green-500" />
@@ -787,7 +694,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Coach de Rendimiento */}
+      {/* Coach de Rendimiento — con tarjetas de entrenadores adentro */}
       <section id="coach" className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -795,9 +702,9 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="bg-gradient-to-br from-black via-gray-900 to-red-800 text-white rounded-3xl p-10 shadow-2xl hover:scale-[1.02] transition-all duration-500 relative overflow-hidden group">
+          {/* Encabezado */}
+          <div className="bg-gradient-to-br from-black via-gray-900 to-red-800 text-white rounded-3xl p-10 shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,_rgba(59,130,246,0.1),_transparent_70%)]"></div>
-
             <div className="relative z-10 flex items-start gap-6">
               <div className="p-4 bg-blue-400/20 rounded-2xl backdrop-blur-sm">
                 <FaUserShield className="text-5xl text-blue-400" />
@@ -819,6 +726,76 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Tarjetas de entrenadores */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+
+            {/* Juliana Estefania Pastas */}
+            <motion.div
+              whileHover={{ scale: 1.03, y: -5 }}
+              className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center"
+            >
+              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
+                <Image
+                  src="/juliana_pastas.jpg"
+                  alt="Juliana Estefania Pastas"
+                  width={96}
+                  height={96}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <h3 className="font-bold text-lg text-white mb-1">Juliana Estefania Pastas</h3>
+              <span className="text-red-400 text-sm font-semibold">Entrenadora</span>
+            </motion.div>
+
+            {/* Luis Carlos Benavides */}
+            <motion.div
+              whileHover={{ scale: 1.03, y: -5 }}
+              className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center"
+            >
+              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
+                <Image
+                  src="/luis_benavides.jpg"
+                  alt="Luis Carlos Benavides"
+                  width={96}
+                  height={96}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <h3 className="font-bold text-lg text-white mb-1">Luis Carlos Benavides</h3>
+              <span className="text-red-400 text-sm font-semibold block mb-4">Entrenador</span>
+              <ul className="text-left space-y-2 text-gray-300 text-xs">
+                <li className="border-b border-white/10 pb-2">🎓 Tecnólogo en Entrenamiento Deportivo — SENA (2014)</li>
+                <li className="border-b border-white/10 pb-2">🪪 Tarjeta de Entrenador Deportivo COCED 2026</li>
+                <li>📚 Historiador — Universidad de Caldas (2024)</li>
+              </ul>
+            </motion.div>
+
+            {/* Juan Pablo Jiménez */}
+            <motion.div
+              whileHover={{ scale: 1.03, y: -5 }}
+              className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center"
+            >
+              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
+                <Image
+                  src="/juan_pablo_jimenez.jpg"
+                  alt="Juan Pablo Jiménez"
+                  width={96}
+                  height={96}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <h3 className="font-bold text-lg text-white mb-1">Juan Pablo Jiménez</h3>
+              <span className="text-red-400 text-sm font-semibold block mb-4">Preparador de Porteros</span>
+              <ul className="text-left space-y-2 text-gray-300 text-xs">
+                <li className="border-b border-white/10 pb-2">🏫 Estudiante — Dirección Técnica, Instituto Superior de Fútbol de Quito</li>
+                <li className="border-b border-white/10 pb-2">🧤 Amplia experiencia en preparación de porteros</li>
+                <li className="border-b border-white/10 pb-2">🏆 Diplomado en Seminario de Alto Liderazgo</li>
+                <li>⚽ Diplomado en Preparación Técnica, Táctica y Física</li>
+              </ul>
+            </motion.div>
+
+          </div>
         </motion.div>
       </section>
 
@@ -832,7 +809,6 @@ export default function Home() {
         >
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
             <div className="absolute -left-20 -bottom-20 w-60 h-60 bg-gradient-to-br from-red-600/5 to-yellow-400/5 rounded-full blur-3xl"></div>
-
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl shadow-lg">
@@ -842,7 +818,6 @@ export default function Home() {
                   Deberes de las Familias
                 </h2>
               </div>
-
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[
                   { icon: FaClock, text: "Cumplir horarios", color: "blue" },
@@ -882,29 +857,20 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-black text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">
             Nuestro Club
           </h2>
-
           <Swiper spaceBetween={30} slidesPerView={1.2} loop={true} className="px-4">
-            {/* Slide 1 - Familia Atletico */}
             <SwiperSlide>
               <div className="h-80 bg-gradient-to-br from-black to-gray-800 rounded-3xl shadow-2xl overflow-hidden relative group cursor-pointer">
                 <Image src="/familia_sucre1.jpeg" alt="Familia Atletico Sucre" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6">
                   <span className="text-white text-2xl font-bold">Familia Atletico Sucre</span>
-                  <p className="text-white/70 text-sm mt-2">Más que jugadores somos una familia, más que un equipo somos caballeros en la victoria y en la derrota </p>
+                  <p className="text-white/70 text-sm mt-2">Más que jugadores somos una familia, más que un equipo somos caballeros en la victoria y en la derrota</p>
                 </div>
               </div>
             </SwiperSlide>
-
-            {/* Slide 2 - Equipo Campeón */}
             <SwiperSlide>
               <div className="h-80 rounded-3xl shadow-2xl overflow-hidden relative group cursor-pointer">
-                <Image 
-                  src="/equipo.jpeg" 
-                  alt="Equipo Campeón" 
-                  fill 
-                  className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                />
+                <Image src="/equipo.jpeg" alt="Equipo Campeón" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6">
                   <span className="text-white text-2xl font-bold">Equipo Sub 7</span>
@@ -915,12 +881,10 @@ export default function Home() {
                 </div>
               </div>
             </SwiperSlide>
-
-            {/* Slide 3 - Entrenamiento */}
             <SwiperSlide>
               <div className="h-80 rounded-3xl shadow-2xl overflow-hidden relative group">
-                <video 
-                  src="/entrenamiento.mp4" 
+                <video
+                  src="/entrenamiento.mp4"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   autoPlay
                   muted
@@ -941,11 +905,10 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Footer Mejorado */}
+      {/* Footer */}
       <footer id="contacto" className="bg-gradient-to-br from-black via-gray-900 to-red-900 text-white text-center py-16 mt-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.05),_transparent_70%)]"></div>
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
-
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <motion.div
             initial={{ scale: 0 }}
@@ -959,11 +922,10 @@ export default function Home() {
               alt="Escudo"
               width={120}
               height={120}
-              className="relative z-10 drop-shadow-2xl animate-float object-contain bg-transparent"
+              className="relative z-10 drop-shadow-2xl object-contain bg-transparent"
               style={{ animation: "float 6s ease-in-out infinite" }}
             />
           </motion.div>
-
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -971,7 +933,6 @@ export default function Home() {
           >
             Club Atlético Sucre
           </motion.h3>
-
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -979,7 +940,6 @@ export default function Home() {
           >
             "Formando campeones dentro y fuera de la cancha"
           </motion.p>
-
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -1001,7 +961,6 @@ export default function Home() {
               </a>
             ))}
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -1014,7 +973,7 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Botón flotante de WhatsApp */}
+      {/* Botón flotante WhatsApp */}
       <motion.a
         href="https://wa.me/573218543957"
         className="fixed bottom-6 right-6 bg-gradient-to-br from-green-400 to-green-600 p-5 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.5)] text-white text-2xl hover:scale-110 transition-all duration-300 z-50"
