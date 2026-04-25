@@ -389,7 +389,7 @@ export default function Home() {
             {/* Juliana Estefania Pastas */}
             <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
               <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
-                <Image src="/juliana_pastas.jpg" alt="Juliana Estefania Pastas" width={96} height={96} className="object-cover w-full h-full" />
+                <Image src="/juliana_pastas.jpeg" alt="Juliana Estefania Pastas" width={96} height={96} className="object-cover w-full h-full" />
               </div>
               <h3 className="font-bold text-lg text-white mb-1">Juliana Estefania Pastas</h3>
               <span className="text-red-400 text-sm font-semibold block mb-4">Entrenadora</span>
@@ -416,7 +416,7 @@ export default function Home() {
             {/* Luis Carlos Benavides */}
             <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
               <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
-                <Image src="/luis_benavides.jpg" alt="Luis Carlos Benavides" width={96} height={96} className="object-cover w-full h-full" />
+                <Image src="/luis_benavides.jpeg" alt="Luis Carlos Benavides" width={96} height={96} className="object-cover w-full h-full" />
               </div>
               <h3 className="font-bold text-lg text-white mb-1">Luis Carlos Benavides</h3>
               <span className="text-red-400 text-sm font-semibold block mb-4">Entrenador</span>
