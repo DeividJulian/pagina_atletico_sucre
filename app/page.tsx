@@ -21,12 +21,12 @@ import {
   FaMoneyBillWave,
   FaCreditCard,
   FaTshirt,
-  FaShoePrints,
-  FaCalendarAlt,
   FaMapMarkerAlt,
   FaSun,
   FaMoon,
-  FaSchool
+  FaSchool,
+  FaGraduationCap,
+  FaChalkboardTeacher,
 } from "react-icons/fa";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -159,15 +159,15 @@ export default function Home() {
               <p className="text-gray-700 leading-relaxed text-lg mb-8">No solo formamos futbolistas, formamos personas íntegras. Nuestra identidad se basa en la unión, el respeto, la disciplina y la excelencia.</p>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
-                  { icon: FaHeart, title: "Juego limpio", desc: "Respeto total", color: "red" },
-                  { icon: FaUsers, title: "Somos un equipo", desc: "Unidos siempre", color: "blue" },
-                  { icon: FaAward, title: "Entrega total", desc: "Dar el máximo", color: "yellow" },
-                  { icon: FaClock, title: "Proceso", desc: "Sobre resultado", color: "green" },
-                  { icon: FaStar, title: "Mérito", desc: "Con disciplina", color: "purple" },
-                  { icon: FaShieldAlt, title: "Respeto", desc: "Base fundamental", color: "indigo" },
+                  { icon: FaHeart, title: "Juego limpio", desc: "Respeto total", bg: "bg-red-100", color: "text-red-600" },
+                  { icon: FaUsers, title: "Somos un equipo", desc: "Unidos siempre", bg: "bg-blue-100", color: "text-blue-600" },
+                  { icon: FaAward, title: "Entrega total", desc: "Dar el máximo", bg: "bg-yellow-100", color: "text-yellow-600" },
+                  { icon: FaClock, title: "Proceso", desc: "Sobre resultado", bg: "bg-green-100", color: "text-green-600" },
+                  { icon: FaStar, title: "Mérito", desc: "Con disciplina", bg: "bg-purple-100", color: "text-purple-600" },
+                  { icon: FaShieldAlt, title: "Respeto", desc: "Base fundamental", bg: "bg-indigo-100", color: "text-indigo-600" },
                 ].map((item, index) => (
                   <motion.div key={index} whileHover={{ scale: 1.05, y: -5 }} className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group">
-                    <div className={`p-3 bg-${item.color}-100 rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform`}><item.icon className={`text-${item.color}-600 text-2xl`} /></div>
+                    <div className={`p-3 ${item.bg} rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform`}><item.icon className={`${item.color} text-2xl`} /></div>
                     <h3 className="font-bold text-lg mb-1">{item.title}</h3>
                     <p className="text-gray-600 text-sm">{item.desc}</p>
                   </motion.div>
@@ -236,7 +236,7 @@ export default function Home() {
                   { src: "/uniforme_alternativo.jpeg", alt: "Uniforme Alternativo", title: "Uniforme Alternativo", desc: "Camiseta roja - Pantaloneta roja", price: "$50.000", badge: "Completo", bg: "from-gray-700 to-black" },
                   { src: "/uniforme_3.jpeg", alt: "Uniforme Entrenamiento", title: "Entrenamiento", desc: "Camiseta Azul-Pantaloneta Azul", price: "$50.000", badge: "Completo", bg: "from-yellow-500 to-yellow-700" },
                   { src: "/arqueros.jpeg", alt: "Uniforme Arquero", title: "Uniforme De Portero", desc: "Uniforme destinado para Porteros", price: "$50.000", badge: "Completo", bg: "from-green-600 to-green-800" },
-                  { src: "/mochila.jpg", alt: "Mochila", title: "Mochila", desc: "Rojo y negro", price: "$?", badge: null, bg: "from-gray-600 to-gray-800" },
+                  { src: "/mochila .jpeg", alt: "Mochila", title: "Mochila", desc: "Rojo y negro", price: "$?", badge: null, bg: "from-gray-600 to-gray-800" },
                   { src: "/uniforme4.jpeg", alt: "Uniforme Alternativo 2", title: "Uniforme Alternativo 2", desc: "Uniforme completo", price: "$50.000", badge: null, bg: "from-red-700 to-red-900" },
                 ].map((item, index) => (
                   <motion.div key={index} whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
@@ -278,7 +278,7 @@ export default function Home() {
                 <motion.div whileHover={{ scale: 1.02 }} className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-xl border-l-4 border-amber-500">
                   <div className="flex items-center gap-3 mb-6"><div className="p-2 bg-amber-500 rounded-lg"><FaSun className="text-white text-xl" /></div><h3 className="text-2xl font-bold text-amber-700">Horario Mañana</h3></div>
                   <div className="space-y-4">
-                    {[{ day: "Martes", time: "8:00 AM - 10:00 AM" }, { day: "Jueves", time: "8:00 AM - 10:00 AM" }, { day: "Viernes", time: "8:00 AM - 10:00 AM" }, { day: "Sábado", time: "9:00 AM - 11:00 AM" }].map((item, index) => (
+                    {[{ day: "Martes", time: "8:00 AM - 10:00 AM" }, { day: "Jueves", time: "8:00 AM - 10:00 AM" }, { day: "Sábado", time: "8:30 AM - 12:30 PM" }].map((item, index) => (
                       <div key={index} className="flex items-center justify-between bg-white/80 p-4 rounded-xl shadow-sm">
                         <div className="flex items-center gap-3"><div className="w-2 h-2 bg-amber-500 rounded-full"></div><span className="font-semibold text-gray-800">{item.day}</span></div>
                         <span className="text-amber-600 font-medium">{item.time}</span>
@@ -290,7 +290,7 @@ export default function Home() {
                 <motion.div whileHover={{ scale: 1.02 }} className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-6 shadow-xl border-l-4 border-indigo-500">
                   <div className="flex items-center gap-3 mb-6"><div className="p-2 bg-indigo-500 rounded-lg"><FaMoon className="text-white text-xl" /></div><h3 className="text-2xl font-bold text-indigo-700">Horario Tarde</h3></div>
                   <div className="space-y-4">
-                    {[{ day: "Martes", time: "3:00 PM - 5:30 PM" }, { day: "Jueves", time: "3:00 PM - 5:30 PM" }, { day: "Viernes", time: "3:00 PM - 5:30 PM" }, { day: "Sábado", time: "11:00 AM - 1:00 PM" }].map((item, index) => (
+                    {[{ day: "Martes", time: "2:30 PM - 5:30 PM" }, { day: "Jueves", time: "2:30 PM - 5:30 PM" }, { day: "Sábado", time: "8:30 AM - 12:30 PM" }].map((item, index) => (
                       <div key={index} className="flex items-center justify-between bg-white/80 p-4 rounded-xl shadow-sm">
                         <div className="flex items-center gap-3"><div className="w-2 h-2 bg-indigo-500 rounded-full"></div><span className="font-semibold text-gray-800">{item.day}</span></div>
                         <span className="text-indigo-600 font-medium">{item.time}</span>
@@ -341,10 +341,10 @@ export default function Home() {
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 h-full">
                     <div className="relative h-48 rounded-xl mb-4 overflow-hidden">
                       <div className="absolute inset-0 flex items-center justify-center bg-purple-600">
-                        <div className="text-center text-white"><FaSchool className="text-6xl mx-auto mb-2 opacity-50" /><p className="text-white/70 text-sm">Colegio Seminario</p></div>
+                        <div className="text-center text-white"><FaSchool className="text-6xl mx-auto mb-2 opacity-50" /><p className="text-white/70 text-sm">Colegio Champagnat</p></div>
                       </div>
                     </div>
-                    <h3 className="font-bold text-2xl mb-2 flex items-center gap-2"><FaSchool className="text-purple-600" />Colegio Seminario</h3>
+                    <h3 className="font-bold text-2xl mb-2 flex items-center gap-2"><FaSchool className="text-purple-600" />Colegio Champagnat</h3>
                     <p className="text-gray-600 mb-3">Cancha en gramado natural</p>
                     <div className="space-y-2 text-gray-600">
                       <div className="flex items-center gap-2"><FaClock className="text-purple-500 text-sm" /><span>Disponible en todos los horarios</span></div>
@@ -355,7 +355,7 @@ export default function Home() {
                 </motion.div>
               </div>
               <div className="mt-10 bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl border border-green-200">
-                <p className="text-gray-700 text-center flex items-center justify-center gap-2"><FaMapMarkerAlt className="text-green-500" /><span className="font-semibold">Ubicaciones:</span> Grupo Cabal (Parque Santander) - Colegio Seminario (Tras del Restaurante la Merced)</p>
+                <p className="text-gray-700 text-center flex items-center justify-center gap-2"><FaMapMarkerAlt className="text-green-500" /><span className="font-semibold">Ubicaciones:</span> Grupo Cabal (Parque Santander) - Colegio Champagnat</p>
               </div>
             </div>
           </div>
@@ -389,7 +389,7 @@ export default function Home() {
             {/* Juliana Estefania Pastas */}
             <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
               <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
-                <Image src="/juliana_pastas.jpeg" alt="Juliana Estefania Pastas" width={96} height={96} className="object-cover w-full h-full" />
+                <Image src="/juliana_pastas.jpeg" alt="Juliana Estefania Pastas" width={96} height={96} className="object-cover w-full h-full object-top" />
               </div>
               <h3 className="font-bold text-lg text-white mb-1">Juliana Estefania Pastas</h3>
               <span className="text-red-400 text-sm font-semibold block mb-4">Entrenadora</span>
@@ -443,6 +443,110 @@ export default function Home() {
             </motion.div>
 
           </div>
+
+          {/* DT de la Fecha — Norvey Alvarado */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mt-10 bg-gradient-to-br from-yellow-900/60 via-gray-900 to-black text-white rounded-3xl p-8 border border-yellow-500/30 shadow-2xl relative overflow-hidden"
+          >
+            {/* Etiqueta DT de la Fecha */}
+            <div className="absolute top-6 right-6 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black text-xs font-black px-4 py-1.5 rounded-full shadow-lg flex items-center gap-2 uppercase tracking-wider">
+              <FaTrophy className="text-sm" /> DT de la Fecha
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+              {/* Foto */}
+              <div className="flex-shrink-0">
+                <div className="relative w-36 h-36">
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full blur-md opacity-60"></div>
+                  <div className="relative w-36 h-36 rounded-full overflow-hidden border-4 border-yellow-400 shadow-xl">
+                    <Image
+                      src="/norvey_alvarado.jpeg"
+                      alt="Norvey Alvarado Morales"
+                      width={144}
+                      height={144}
+                      className="object-cover w-full h-full object-top"
+                    />
+                  </div>
+                </div>
+                <p className="text-center text-yellow-400 text-xs font-bold mt-3">#ElTorneoMásGRANDE</p>
+              </div>
+
+              {/* Info principal */}
+              <div className="flex-1">
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-1">Norvey Alvarado Morales</h3>
+                <p className="text-yellow-300 font-semibold text-sm mb-4">
+                  Lic. en Educación Física · Especialista en Pedagogía y Docencia Universitaria
+                </p>
+
+                {/* Grid de bloques */}
+                <div className="grid md:grid-cols-3 gap-4 mt-4">
+
+                  {/* Perfil Académico */}
+                  <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                    <div className="flex items-center gap-2 mb-3">
+                      <FaGraduationCap className="text-yellow-400 text-lg" />
+                      <span className="text-yellow-400 font-bold text-sm">Perfil Académico</span>
+                    </div>
+                    <ul className="text-gray-300 text-xs space-y-2">
+                      <li className="border-b border-white/10 pb-2">
+                        🏅 <span className="text-white font-semibold">Licencias A y C</span> — Federación Colombiana de Fútbol
+                      </li>
+                      <li className="border-b border-white/10 pb-2">
+                        🏅 <span className="text-white font-semibold">Licencia B</span> — Escuela Nacional del Deporte
+                      </li>
+                      <li>
+                        📋 Docente nombrado en propiedad por el <span className="text-white font-semibold">Magisterio de Nariño</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Trayectoria en fútbol */}
+                  <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                    <div className="flex items-center gap-2 mb-3">
+                      <FaFutbol className="text-red-400 text-lg" />
+                      <span className="text-red-400 font-bold text-sm">Trayectoria Competitiva</span>
+                    </div>
+                    <ul className="text-gray-300 text-xs space-y-2">
+                      <li className="border-b border-white/10 pb-2">
+                        🏟️ Dirección técnica en el <span className="text-white font-semibold">Torneo Nacional Interclubes de Difútbol</span>
+                      </li>
+                      <li className="border-b border-white/10 pb-2">
+                        ⚽ Coordinador Deportivo — <span className="text-white font-semibold">Club Atlético Sucre Nariño</span>
+                      </li>
+                      <li>
+                        👦 Especialista en <span className="text-white font-semibold">categorías juveniles</span> y desarrollo integral del deportista
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Visión estratégica */}
+                  <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                    <div className="flex items-center gap-2 mb-3">
+                      <FaChalkboardTeacher className="text-blue-400 text-lg" />
+                      <span className="text-blue-400 font-bold text-sm">Visión Estratégica</span>
+                    </div>
+                    <ul className="text-gray-300 text-xs space-y-2">
+                      <li className="border-b border-white/10 pb-2">
+                        🎯 Capacidad probada para organizar clubes <span className="text-white font-semibold">desde sus bases</span> hasta el nivel de competencia nacional
+                      </li>
+                      <li>
+                        🔥 Pasión por la <span className="text-white font-semibold">formación integral</span> del futbolista, fusionando pedagogía y deporte
+                      </li>
+                    </ul>
+                    {/* Sello */}
+                    <div className="mt-4 bg-gradient-to-r from-yellow-400/20 to-transparent p-3 rounded-xl border-l-2 border-yellow-400">
+                      <p className="text-yellow-300 font-bold text-xs">PASIÓN POR LA FORMACIÓN INTEGRAL</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
         </motion.div>
       </section>
 
@@ -458,16 +562,16 @@ export default function Home() {
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[
-                  { icon: FaClock, text: "Cumplir horarios", color: "blue" },
-                  { icon: FaUserShield, text: "No intervenir tácticamente", color: "purple" },
-                  { icon: FaHeart, text: "Conducta ejemplar", color: "red" },
-                  { icon: FaHandsHelping, text: "Compromisos administrativos", color: "green" },
-                  { icon: FaStar, text: "Fomentar valores", color: "yellow" },
-                  { icon: FaShieldAlt, text: "Informar condiciones médicas", color: "indigo" },
+                  { icon: FaClock, text: "Cumplir horarios", bg: "bg-blue-100", color: "text-blue-600" },
+                  { icon: FaUserShield, text: "No intervenir tácticamente", bg: "bg-purple-100", color: "text-purple-600" },
+                  { icon: FaHeart, text: "Conducta ejemplar", bg: "bg-red-100", color: "text-red-600" },
+                  { icon: FaHandsHelping, text: "Compromisos administrativos", bg: "bg-green-100", color: "text-green-600" },
+                  { icon: FaStar, text: "Fomentar valores", bg: "bg-yellow-100", color: "text-yellow-600" },
+                  { icon: FaShieldAlt, text: "Informar condiciones médicas", bg: "bg-indigo-100", color: "text-indigo-600" },
                 ].map((item, index) => (
                   <motion.div key={index} whileHover={{ scale: 1.05, x: 5 }} className="bg-white p-5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-red-500 group">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 bg-${item.color}-100 rounded-lg group-hover:scale-110 transition-transform`}><item.icon className={`text-${item.color}-600 text-xl`} /></div>
+                      <div className={`p-2 ${item.bg} rounded-lg group-hover:scale-110 transition-transform`}><item.icon className={`${item.color} text-xl`} /></div>
                       <span className="font-medium text-gray-700">{item.text}</span>
                     </div>
                   </motion.div>
@@ -532,12 +636,12 @@ export default function Home() {
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="text-xl mb-6 text-white/80">"Formando campeones dentro y fuera de la cancha"</motion.p>
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="flex justify-center gap-6 mb-8">
             {[
-              { icon: FaWhatsapp, href: "https://wa.me/573218543957", color: "green" },
-              { icon: FaTrophy, href: "#", color: "yellow" },
-              { icon: FaUsers, href: "#familias", color: "blue" },
+              { icon: FaWhatsapp, href: "https://wa.me/573218543957", bg: "bg-green-500/20 hover:bg-green-500/30", color: "text-green-400" },
+              { icon: FaTrophy, href: "#", bg: "bg-yellow-500/20 hover:bg-yellow-500/30", color: "text-yellow-400" },
+              { icon: FaUsers, href: "#familias", bg: "bg-blue-500/20 hover:bg-blue-500/30", color: "text-blue-400" },
             ].map((item, index) => (
-              <a key={index} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} className={`p-3 bg-${item.color}-500/20 rounded-xl hover:bg-${item.color}-500/30 transition-all duration-300 hover:scale-110`}>
-                <item.icon className={`text-${item.color}-400 text-2xl`} />
+              <a key={index} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined} className={`p-3 ${item.bg} rounded-xl transition-all duration-300 hover:scale-110`}>
+                <item.icon className={`${item.color} text-2xl`} />
               </a>
             ))}
           </motion.div>
