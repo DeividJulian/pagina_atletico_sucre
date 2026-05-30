@@ -236,7 +236,7 @@ export default function Home() {
                   { src: "/uniforme_alternativo.jpeg", alt: "Uniforme Alternativo", title: "Uniforme Alternativo", desc: "Camiseta roja - Pantaloneta roja", price: "$50.000", badge: "Completo", bg: "from-gray-700 to-black" },
                   { src: "/uniforme_3.jpeg", alt: "Uniforme Entrenamiento", title: "Entrenamiento", desc: "Camiseta Azul-Pantaloneta Azul", price: "$50.000", badge: "Completo", bg: "from-yellow-500 to-yellow-700" },
                   { src: "/arqueros.jpeg", alt: "Uniforme Arquero", title: "Uniforme De Portero", desc: "Uniforme destinado para Porteros", price: "$50.000", badge: "Completo", bg: "from-green-600 to-green-800" },
-                  { src: "/mochila .jpeg", alt: "Mochila", title: "Mochila", desc: "Rojo y negro", price: "$?", badge: null, bg: "from-gray-600 to-gray-800" },
+                  { src: "/mochila.jpeg", alt: "Mochila", title: "Mochila", desc: "Rojo y negro", price: "$?", badge: null, bg: "from-gray-600 to-gray-800" },
                   { src: "/uniforme4.jpeg", alt: "Uniforme Alternativo 2", title: "Uniforme Alternativo 2", desc: "Uniforme completo", price: "$50.000", badge: null, bg: "from-red-700 to-red-900" },
                 ].map((item, index) => (
                   <motion.div key={index} whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
@@ -389,7 +389,7 @@ export default function Home() {
             {/* Juliana Estefania Pastas */}
             <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
               <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
-                <Image src="/juliana_pastas.jpeg" alt="Juliana Estefania Pastas" width={96} height={96} className="object-cover w-full h-full object-top" />
+                <Image src="/juliana_pastas.jpeg" alt="Juliana Estefania Pastas" width={96} height={96} className="object-cover w-full h-full" style={{ objectPosition: "center 20%" }} />
               </div>
               <h3 className="font-bold text-lg text-white mb-1">Juliana Estefania Pastas</h3>
               <span className="text-red-400 text-sm font-semibold block mb-4">Entrenadora</span>
@@ -444,20 +444,19 @@ export default function Home() {
 
           </div>
 
-          {/* DT de la Fecha — Norvey Alvarado */}
+          {/* Presidente del Club — Norvey Alvarado */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="mt-10 bg-gradient-to-br from-yellow-900/60 via-gray-900 to-black text-white rounded-3xl p-8 border border-yellow-500/30 shadow-2xl relative overflow-hidden"
           >
-            {/* Etiqueta DT de la Fecha */}
             <div className="absolute top-6 right-6 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black text-xs font-black px-4 py-1.5 rounded-full shadow-lg flex items-center gap-2 uppercase tracking-wider">
-              <FaTrophy className="text-sm" /> DT de la Fecha
+              <FaTrophy className="text-sm" /> Presidente del Club Atlético Sucre
             </div>
 
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-              {/* Foto */}
+              {/* Foto Norvey — objectPosition para mostrar más cuerpo */}
               <div className="flex-shrink-0">
                 <div className="relative w-36 h-36">
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full blur-md opacity-60"></div>
@@ -467,11 +466,11 @@ export default function Home() {
                       alt="Norvey Alvarado Morales"
                       width={144}
                       height={144}
-                      className="object-cover w-full h-full object-top"
+                      className="object-cover w-full h-full"
+                      style={{ objectPosition: "center 15%" }}
                     />
                   </div>
                 </div>
-                <p className="text-center text-yellow-400 text-xs font-bold mt-3">#ElTorneoMásGRANDE</p>
               </div>
 
               {/* Info principal */}
@@ -480,73 +479,143 @@ export default function Home() {
                 <p className="text-yellow-300 font-semibold text-sm mb-4">
                   Lic. en Educación Física · Especialista en Pedagogía y Docencia Universitaria
                 </p>
-
-                {/* Grid de bloques */}
                 <div className="grid md:grid-cols-3 gap-4 mt-4">
-
-                  {/* Perfil Académico */}
                   <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-3">
                       <FaGraduationCap className="text-yellow-400 text-lg" />
                       <span className="text-yellow-400 font-bold text-sm">Perfil Académico</span>
                     </div>
                     <ul className="text-gray-300 text-xs space-y-2">
-                      <li className="border-b border-white/10 pb-2">
-                        🏅 <span className="text-white font-semibold">Licencias A y C</span> — Federación Colombiana de Fútbol
-                      </li>
-                      <li className="border-b border-white/10 pb-2">
-                        🏅 <span className="text-white font-semibold">Licencia B</span> — Escuela Nacional del Deporte
-                      </li>
-                      <li>
-                        📋 Docente nombrado en propiedad por el <span className="text-white font-semibold">Magisterio de Nariño</span>
-                      </li>
+                      <li className="border-b border-white/10 pb-2">🏅 <span className="text-white font-semibold">Licencias A y C</span> — Federación Colombiana de Fútbol</li>
+                      <li className="border-b border-white/10 pb-2">🏅 <span className="text-white font-semibold">Licencia B</span> — Escuela Nacional del Deporte De Cali Valle</li>
+                      <li>📋 Docente nombrado en propiedad por el <span className="text-white font-semibold">Magisterio de Nariño</span></li>
                     </ul>
                   </div>
-
-                  {/* Trayectoria en fútbol */}
                   <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-3">
                       <FaFutbol className="text-red-400 text-lg" />
                       <span className="text-red-400 font-bold text-sm">Trayectoria Competitiva</span>
                     </div>
                     <ul className="text-gray-300 text-xs space-y-2">
-                      <li className="border-b border-white/10 pb-2">
-                        🏟️ Dirección técnica en el <span className="text-white font-semibold">Torneo Nacional Interclubes de Difútbol</span>
-                      </li>
-                      <li className="border-b border-white/10 pb-2">
-                        ⚽ Coordinador Deportivo — <span className="text-white font-semibold">Club Atlético Sucre Nariño</span>
-                      </li>
-                      <li>
-                        👦 Especialista en <span className="text-white font-semibold">categorías juveniles</span> y desarrollo integral del deportista
-                      </li>
+                      <li className="border-b border-white/10 pb-2">🏟️ Dirección técnica en el <span className="text-white font-semibold">Torneo Nacional Interclubes de Difútbol por más de 6 años</span></li>
+                      <li className="border-b border-white/10 pb-2">⚽ Coordinador Deportivo — <span className="text-white font-semibold">Club Atlético Sucre Nariño</span></li>
+                      <li>👦 Especialista en <span className="text-white font-semibold">categorías juveniles</span> y desarrollo integral del deportista</li>
                     </ul>
                   </div>
-
-                  {/* Visión estratégica */}
                   <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
                     <div className="flex items-center gap-2 mb-3">
                       <FaChalkboardTeacher className="text-blue-400 text-lg" />
                       <span className="text-blue-400 font-bold text-sm">Visión Estratégica</span>
                     </div>
                     <ul className="text-gray-300 text-xs space-y-2">
-                      <li className="border-b border-white/10 pb-2">
-                        🎯 Capacidad probada para organizar clubes <span className="text-white font-semibold">desde sus bases</span> hasta el nivel de competencia nacional
-                      </li>
-                      <li>
-                        🔥 Pasión por la <span className="text-white font-semibold">formación integral</span> del futbolista, fusionando pedagogía y deporte
-                      </li>
+                      <li className="border-b border-white/10 pb-2">🎯 Capacidad probada para organizar clubes <span className="text-white font-semibold">desde sus bases</span> hasta el nivel de competencia nacional</li>
+                      <li>🔥 Pasión por la <span className="text-white font-semibold">formación integral</span> del futbolista, fusionando pedagogía y deporte</li>
                     </ul>
-                    {/* Sello */}
                     <div className="mt-4 bg-gradient-to-r from-yellow-400/20 to-transparent p-3 rounded-xl border-l-2 border-yellow-400">
                       <p className="text-yellow-300 font-bold text-xs">PASIÓN POR LA FORMACIÓN INTEGRAL</p>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
           </motion.div>
 
+        </motion.div>
+      </section>
+
+      {/* Entrenadora del Mes — Juliana Pastas */}
+      <section className="px-4 md:px-8 mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div className="relative bg-gradient-to-br from-red-900 via-gray-900 to-black text-white rounded-3xl overflow-hidden shadow-2xl border border-red-500/30">
+            {/* Fondo decorativo */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_rgba(239,68,68,0.15),_transparent_60%)]"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-400 to-transparent"></div>
+
+            {/* Encabezado */}
+            <div className="relative z-10 text-center pt-10 pb-6 px-6">
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <FaTrophy className="text-yellow-400 text-3xl animate-pulse" />
+                <h2 className="text-3xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">
+                  ¡ENTRENADORA DEL MES!
+                </h2>
+                <FaTrophy className="text-yellow-400 text-3xl animate-pulse" />
+              </div>
+              <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full mx-auto mt-2"></div>
+            </div>
+
+            {/* Contenido principal */}
+            <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8 px-8 pb-10">
+
+              {/* Foto Juliana grande */}
+              <div className="flex-shrink-0 flex flex-col items-center">
+                <div className="relative w-44 h-44">
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-400 rounded-full blur-lg opacity-70"></div>
+                  <div className="relative w-44 h-44 rounded-full overflow-hidden border-4 border-yellow-400 shadow-2xl">
+                    <Image
+                      src="/juliana_pastas.jpeg"
+                      alt="Juliana Estefania Pastas"
+                      width={176}
+                      height={176}
+                      className="object-cover w-full h-full"
+                      style={{ objectPosition: "center 20%" }}
+                    />
+                  </div>
+                  {/* Badge estrella */}
+                  <div className="absolute -bottom-2 -right-2 bg-yellow-400 text-black text-xs font-black px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
+                    <FaStar className="text-xs" /> DESTACADA
+                  </div>
+                </div>
+                <p className="mt-5 text-center font-black text-lg text-white">Juliana Estefania Pastas</p>
+                <p className="text-red-400 text-sm font-semibold">Entrenadora</p>
+              </div>
+
+              {/* Texto del reconocimiento */}
+              <div className="flex-1 space-y-5">
+                <p className="text-gray-200 leading-relaxed text-base">
+                  Hoy queremos tomarnos un momento para reconocer el trabajo, la pasión y la entrega de una profesional excepcional.
+                  El <span className="text-white font-bold">Club de Fútbol Atlético Sucre</span> felicita con mucho orgullo a la{" "}
+                  <span className="text-yellow-400 font-bold">Profe Juliana Pastas</span> como nuestra entrenadora destacada. 👏🌟
+                </p>
+
+                <p className="text-gray-300 text-sm font-semibold uppercase tracking-wider">Queremos resaltar su:</p>
+
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+                    <span className="text-xl mt-0.5">📋</span>
+                    <div>
+                      <p className="font-bold text-white text-sm">Dedicación y Compromiso</p>
+                      <p className="text-gray-300 text-xs mt-1">Su entrega incondicional con cada uno de sus deportistas en cada entrenamiento.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+                    <span className="text-xl mt-0.5">🕒</span>
+                    <div>
+                      <p className="font-bold text-white text-sm">Puntualidad y Claridad</p>
+                      <p className="text-gray-300 text-xs mt-1">Por su excelente gestión y orden al preparar minuciosamente los horarios de entrenamiento, manteniendo siempre informados a sus grupos a cargo.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+                    <span className="text-xl mt-0.5">⚽</span>
+                    <div>
+                      <p className="text-gray-300 text-xs">Por estar siempre al pendiente, con el corazón y el profesionalismo que la caracteriza.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mensaje final */}
+                <div className="bg-gradient-to-r from-yellow-400/20 to-transparent p-4 rounded-2xl border-l-4 border-yellow-400 mt-4">
+                  <p className="text-yellow-200 font-semibold text-sm leading-relaxed">
+                    Gracias, Profe Juliana, por formar campeones para la vida con tanto amor y disciplina. Su labor engrandece a nuestra institución. 🧭📈⚽
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </section>
 
