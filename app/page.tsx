@@ -236,7 +236,7 @@ export default function Home() {
                   { src: "/uniforme_alternativo.jpeg", alt: "Uniforme Alternativo", title: "Uniforme Alternativo", desc: "Camiseta roja - Pantaloneta roja", price: "$50.000", badge: "Completo", bg: "from-gray-700 to-black" },
                   { src: "/uniforme_3.jpeg", alt: "Uniforme Entrenamiento", title: "Entrenamiento", desc: "Camiseta Azul-Pantaloneta Azul", price: "$50.000", badge: "Completo", bg: "from-yellow-500 to-yellow-700" },
                   { src: "/arqueros.jpeg", alt: "Uniforme Arquero", title: "Uniforme De Portero", desc: "Uniforme destinado para Porteros", price: "$50.000", badge: "Completo", bg: "from-green-600 to-green-800" },
-                  { src: "/mochila.jpeg", alt: "Mochila", title: "Mochila", desc: "Rojo y negro", price: "$?", badge: null, bg: "from-gray-600 to-gray-800" },
+                  { src: "/mochila.jpeg", alt: "Mochila", title: "Mochila", desc: "Rojo y negro", price: "$40.000", badge: null, bg: "from-gray-600 to-gray-800" },
                   { src: "/uniforme4.jpeg", alt: "Uniforme Alternativo 2", title: "Uniforme Alternativo 2", desc: "Uniforme completo", price: "$50.000", badge: null, bg: "from-red-700 to-red-900" },
                 ].map((item, index) => (
                   <motion.div key={index} whileHover={{ scale: 1.05, y: -5 }} className="group cursor-pointer">
@@ -384,7 +384,7 @@ export default function Home() {
           </div>
 
           {/* Tarjetas de entrenadores */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
 
             {/* Juliana Estefania Pastas */}
             <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
@@ -439,6 +439,38 @@ export default function Home() {
                 <li className="border-b border-white/10 pb-2">🧤 Amplia experiencia en preparación de porteros</li>
                 <li className="border-b border-white/10 pb-2">🏆 Diplomado en Seminario de Alto Liderazgo</li>
                 <li>⚽ Diplomado en Preparación Técnica, Táctica y Física</li>
+              </ul>
+            </motion.div>
+
+            {/* Cristhian David Villarreal */}
+            <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
+              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
+                <Image src="/cristian.jpeg" alt="Cristhian David Villarreal Payan" width={96} height={96} className="object-cover w-full h-full object-top" />
+              </div>
+              <h3 className="font-bold text-lg text-white mb-1">Cristhian David Villarreal Payán</h3>
+              <span className="text-red-400 text-sm font-semibold block mb-4">Entrenador</span>
+              <ul className="text-left space-y-2 text-gray-300 text-xs">
+                <li className="border-b border-white/10 pb-2">
+                  🎓 <span className="text-white font-semibold">Título:</span> Licenciado en Educación Física y Deportes
+                </li>
+                <li className="border-b border-white/10 pb-2">
+                  📚 <span className="text-white font-semibold">Estudios realizados:</span>
+                  <ul className="mt-1 space-y-1 pl-2">
+                    <li>• Tecnólogo en Entrenamiento Deportivo</li>
+                    <li>• Diplomado en Preparación Física</li>
+                    <li>• Seminario en Periodización Táctica</li>
+                    <li>• Seminario en Revolución Táctica</li>
+                    <li>• Seminario taller en Espacios Reducidos</li>
+                    <li>• Seminario en Psicología Deportiva</li>
+                    <li>• Seminario para Entrenadores Fútbol Base</li>
+                    <li>• Manejo de Lesiones y Recuperación Física</li>
+                    <li>• Licencia C — Federación Colombiana de Fútbol</li>
+                  </ul>
+                </li>
+                <li>
+                  🪪 Tarjeta de Entrenador Deportivo — <span className="text-white font-semibold">COCED</span>
+                  <p className="text-gray-400 text-xs mt-0.5">Colegio Colombiano de Entrenamiento Deportivo</p>
+                </li>
               </ul>
             </motion.div>
 
@@ -561,8 +593,8 @@ export default function Home() {
                       alt="Juliana Estefania Pastas"
                       width={176}
                       height={176}
-                      className="object-cover w-full h-full"
-                      style={{ objectPosition: "center 20%" }}
+                      className="object-cover w-full h-full scale-90"
+                      style={{ objectPosition: "center 25%" }}
                     />
                   </div>
                   {/* Badge estrella */}
