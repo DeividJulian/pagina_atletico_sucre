@@ -40,32 +40,45 @@ export default function Home() {
       <div className="absolute top-1/2 left-0 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl -z-10"></div>
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-xl text-white z-50 border-b border-white/10 shadow-2xl">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3">
+      <nav className="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-xl text-white z-50 border-b border-white/10 shadow-2xl">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-2">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-400 rounded-full blur-md opacity-50"></div>
-              <Image src="/escudo1.jpeg" alt="Escudo Atletico Sucre" width={45} height={45} className="rounded-full shadow-lg relative z-10 object-contain bg-transparent" />
+              <Image src="/escudo1.jpeg" alt="Escudo Atletico Sucre" width={38} height={38} className="rounded-full shadow-lg relative z-10 object-contain bg-transparent" />
             </div>
-            <span className="font-black tracking-widest text-sm md:text-base bg-clip-text text-transparent bg-gradient-to-r from-white to-red-200">ATLETICO SUCRE</span>
+            <span className="font-black tracking-wider text-sm bg-clip-text text-transparent bg-gradient-to-r from-white to-red-200">ATLETICO SUCRE</span>
           </motion.div>
-          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="hidden md:flex gap-8 text-sm font-medium">
+          {/* Links desktop */}
+          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="hidden md:flex gap-6 text-sm font-medium">
             {[
-              { href: "#filosofia", label: "Filosofia", icon: FaBalanceScale },
+              { href: "#filosofia", label: "Filosofía", icon: FaBalanceScale },
               { href: "#costos", label: "Costos", icon: FaMoneyBillWave },
               { href: "#uniformes", label: "Uniformes", icon: FaTshirt },
               { href: "#horarios", label: "Horarios", icon: FaClock },
               { href: "#lugares", label: "Lugares", icon: FaMapMarkerAlt },
               { href: "#coach", label: "Coach", icon: FaUserShield },
               { href: "#familias", label: "Familias", icon: FaUsers },
-              { href: "#contacto", label: "Contacto", icon: FaWhatsapp, isWhatsApp: true },
+              { href: "https://wa.me/573218543957", label: "Contacto", icon: FaWhatsapp, isWhatsApp: true },
             ].map((item, index) => (
-              <a key={index} href={item.isWhatsApp ? "https://wa.me/573218543957" : item.href} target={item.isWhatsApp ? "_blank" : undefined} rel={item.isWhatsApp ? "noopener noreferrer" : undefined} className="group flex items-center gap-2 hover:text-red-400 transition-all duration-300">
-                <item.icon className={`text-sm ${item.isWhatsApp ? 'text-green-400 group-hover:text-green-300' : ''}`} />
+              <a key={index} href={item.href} target={item.isWhatsApp ? "_blank" : undefined} rel={item.isWhatsApp ? "noopener noreferrer" : undefined} className="group flex items-center gap-1.5 hover:text-red-400 transition-all duration-300">
+                <item.icon className={`text-xs ${item.isWhatsApp ? 'text-green-400' : ''}`} />
                 <span className="relative">{item.label}<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-400 group-hover:w-full transition-all duration-300"></span></span>
               </a>
             ))}
           </motion.div>
+          {/* Links mobile — solo iconos de acceso rápido */}
+          <div className="flex md:hidden items-center gap-3">
+            <a href="https://wa.me/573218543957" target="_blank" rel="noopener noreferrer" className="p-2 bg-green-500/20 rounded-xl">
+              <FaWhatsapp className="text-green-400 text-lg" />
+            </a>
+            <a href="#coach" className="p-2 bg-white/10 rounded-xl">
+              <FaUserShield className="text-white text-lg" />
+            </a>
+            <a href="#horarios" className="p-2 bg-white/10 rounded-xl">
+              <FaClock className="text-white text-lg" />
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -78,8 +91,8 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12 lg:gap-16">
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="space-y-6">
             <div className="inline-block">
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-5xl md:text-7xl font-black tracking-[-0.02em] bg-clip-text text-transparent bg-gradient-to-r from-white via-yellow-200 to-white drop-shadow-2xl">ATLETICO</motion.h1>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="text-5xl md:text-7xl font-black tracking-[-0.02em] text-white drop-shadow-2xl">SUCRE</motion.h1>
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-4xl md:text-7xl font-black tracking-[-0.02em] bg-clip-text text-transparent bg-gradient-to-r from-white via-yellow-200 to-white drop-shadow-2xl">ATLETICO</motion.h1>
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="text-4xl md:text-7xl font-black tracking-[-0.02em] text-white drop-shadow-2xl">SUCRE</motion.h1>
             </div>
             <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.8, delay: 0.4 }} className="w-32 h-1.5 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full"></motion.div>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.5 }} className="flex items-center gap-3">
@@ -130,7 +143,7 @@ export default function Home() {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl shadow-lg"><FaRegFutbol className="text-white text-2xl" /></div>
-                <h2 className="text-3xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">Formación Integral</h2>
+                <h2 className="text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">Formación Integral</h2>
               </div>
               <p className="text-gray-700 leading-relaxed text-lg mb-8">Procesos de entrenamiento para niñas y niños desde los 4 hasta los 16 años. Disciplina, valores y desarrollo deportivo con metodología profesional. Formamos técnica, táctica, mentalidad y carácter.</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -154,10 +167,10 @@ export default function Home() {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl shadow-lg"><FaBalanceScale className="text-white text-2xl" /></div>
-                <h2 className="text-3xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">Filosofía Atletico Sucre</h2>
+                <h2 className="text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">Filosofía Atletico Sucre</h2>
               </div>
               <p className="text-gray-700 leading-relaxed text-lg mb-8">No solo formamos futbolistas, formamos personas íntegras. Nuestra identidad se basa en la unión, el respeto, la disciplina y la excelencia.</p>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {[
                   { icon: FaHeart, title: "Juego limpio", desc: "Respeto total", bg: "bg-red-100", color: "text-red-600" },
                   { icon: FaUsers, title: "Somos un equipo", desc: "Unidos siempre", bg: "bg-blue-100", color: "text-blue-600" },
@@ -186,7 +199,7 @@ export default function Home() {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-green-600 to-green-700 rounded-2xl shadow-lg"><FaMoneyBillWave className="text-white text-2xl" /></div>
-                <h2 className="text-3xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800">Costos y Pagos</h2>
+                <h2 className="text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800">Costos y Pagos</h2>
               </div>
               <div className="grid md:grid-cols-2 gap-8">
                 <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-xl border-l-4 border-green-500 relative overflow-hidden group">
@@ -227,7 +240,7 @@ export default function Home() {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl shadow-lg"><FaTshirt className="text-white text-2xl" /></div>
-                <h2 className="text-3xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">Uniformes</h2>
+                <h2 className="text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">Uniformes</h2>
               </div>
               <p className="text-gray-700 text-lg mb-10 text-center max-w-2xl mx-auto">Uniformes oficiales del Club Atlético Sucre. Calidad profesional para nuestros deportistas.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -271,7 +284,7 @@ export default function Home() {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-lg"><FaClock className="text-white text-2xl" /></div>
-                <h2 className="text-3xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">Horarios de Entrenamiento</h2>
+                <h2 className="text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">Horarios de Entrenamiento</h2>
               </div>
               <p className="text-gray-700 text-lg mb-10 text-center max-w-3xl mx-auto">Entrenamos toda la semana con horarios flexibles para que puedas compaginar el fútbol con tus estudios.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -317,10 +330,10 @@ export default function Home() {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl shadow-lg"><FaMapMarkerAlt className="text-white text-2xl" /></div>
-                <h2 className="text-3xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">Lugares de Entrenamiento</h2>
+                <h2 className="text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">Lugares de Entrenamiento</h2>
               </div>
               <p className="text-gray-700 text-lg mb-10 text-center max-w-3xl mx-auto">Contamos con dos sedes perfectamente equipadas para que nuestros deportistas entrenen en las mejores condiciones.</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <motion.div whileHover={{ scale: 1.03, y: -5 }} className="group cursor-pointer">
                   <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 h-full">
                     <div className="relative h-48 rounded-xl mb-4 overflow-hidden">
@@ -328,11 +341,11 @@ export default function Home() {
                         <div className="text-center text-white"><FaFutbol className="text-6xl mx-auto mb-2 opacity-50" /><p className="text-white/70 text-sm">Cancha Grupo Cabal</p></div>
                       </div>
                     </div>
-                    <h3 className="font-bold text-2xl mb-2 flex items-center gap-2"><FaMapMarkerAlt className="text-blue-600" />Grupo Cabal</h3>
+                    <h3 className="font-bold text-xl mb-2 flex items-center gap-2"><FaMapMarkerAlt className="text-blue-600" />Grupo Cabal</h3>
                     <p className="text-gray-600 mb-3">Cancha en Gramado Natural</p>
                     <div className="space-y-2 text-gray-600">
-                      <div className="flex items-center gap-2"><FaClock className="text-blue-500 text-sm" /><span>Disponible en todos los horarios</span></div>
-                      <div className="flex items-center gap-2"><FaStar className="text-yellow-500 text-sm" /><span>Excelente para entrenamientos</span></div>
+                      <div className="flex items-center gap-2"><FaClock className="text-blue-500 text-sm" /><span className="text-sm">Disponible en todos los horarios</span></div>
+                      <div className="flex items-center gap-2"><FaStar className="text-yellow-500 text-sm" /><span className="text-sm">Excelente para entrenamientos</span></div>
                     </div>
                     <div className="mt-4"><span className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full">Sede Principal</span></div>
                   </div>
@@ -344,18 +357,34 @@ export default function Home() {
                         <div className="text-center text-white"><FaSchool className="text-6xl mx-auto mb-2 opacity-50" /><p className="text-white/70 text-sm">Colegio Champagnat</p></div>
                       </div>
                     </div>
-                    <h3 className="font-bold text-2xl mb-2 flex items-center gap-2"><FaSchool className="text-purple-600" />Colegio Champagnat</h3>
+                    <h3 className="font-bold text-xl mb-2 flex items-center gap-2"><FaSchool className="text-purple-600" />Colegio Champagnat</h3>
                     <p className="text-gray-600 mb-3">Cancha en gramado natural</p>
                     <div className="space-y-2 text-gray-600">
-                      <div className="flex items-center gap-2"><FaClock className="text-purple-500 text-sm" /><span>Disponible en todos los horarios</span></div>
-                      <div className="flex items-center gap-2"><FaStar className="text-yellow-500 text-sm" /><span>Espacio amplio y zonas verdes</span></div>
+                      <div className="flex items-center gap-2"><FaClock className="text-purple-500 text-sm" /><span className="text-sm">Disponible en todos los horarios</span></div>
+                      <div className="flex items-center gap-2"><FaStar className="text-yellow-500 text-sm" /><span className="text-sm">Espacio amplio y zonas verdes</span></div>
                     </div>
                     <div className="mt-4"><span className="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded-full">Sede Alterna</span></div>
                   </div>
                 </motion.div>
+                <motion.div whileHover={{ scale: 1.03, y: -5 }} className="group cursor-pointer">
+                  <div className="bg-gradient-to-br from-gray-100 to-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 h-full">
+                    <div className="relative h-48 rounded-xl mb-4 overflow-hidden">
+                      <div className="absolute inset-0 flex items-center justify-center bg-green-700">
+                        <div className="text-center text-white"><FaSchool className="text-6xl mx-auto mb-2 opacity-50" /><p className="text-white/70 text-sm">Colegio Seminario</p></div>
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-xl mb-2 flex items-center gap-2"><FaSchool className="text-green-700" />Colegio Seminario</h3>
+                    <p className="text-gray-600 mb-3">Cancha para entrenamiento</p>
+                    <div className="space-y-2 text-gray-600">
+                      <div className="flex items-center gap-2"><FaClock className="text-green-600 text-sm" /><span className="text-sm">Disponible en todos los horarios</span></div>
+                      <div className="flex items-center gap-2"><FaStar className="text-yellow-500 text-sm" /><span className="text-sm">Excelente infraestructura deportiva</span></div>
+                    </div>
+                    <div className="mt-4"><span className="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full">Sede Alterna</span></div>
+                  </div>
+                </motion.div>
               </div>
               <div className="mt-10 bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl border border-green-200">
-                <p className="text-gray-700 text-center flex items-center justify-center gap-2"><FaMapMarkerAlt className="text-green-500" /><span className="font-semibold">Ubicaciones:</span> Grupo Cabal (Parque Santander) - Colegio Champagnat</p>
+                <p className="text-gray-700 text-center flex items-center justify-center gap-2 text-sm"><FaMapMarkerAlt className="text-green-500" /><span className="font-semibold">Ubicaciones:</span> Grupo Cabal · Colegio Champagnat · Colegio Seminario</p>
               </div>
             </div>
           </div>
@@ -384,7 +413,7 @@ export default function Home() {
           </div>
 
           {/* Tarjetas de entrenadores */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-8">
 
             {/* Juliana Estefania Pastas */}
             <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
@@ -416,7 +445,7 @@ export default function Home() {
             {/* Luis Carlos Benavides */}
             <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
               <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
-                <Image src="/luis_benavides.jpeg" alt="Luis Carlos Benavides" width={96} height={96} className="object-cover w-full h-full" />
+                <Image src="/luis_benavides.jpeg" alt="Luis Carlos Benavides" width={96} height={96} className="object-cover w-full h-full object-top" />
               </div>
               <h3 className="font-bold text-lg text-white mb-1">Luis Carlos Benavides</h3>
               <span className="text-red-400 text-sm font-semibold block mb-4">Entrenador</span>
@@ -424,6 +453,40 @@ export default function Home() {
                 <li className="border-b border-white/10 pb-2">🎓 Tecnólogo en Entrenamiento Deportivo — SENA (2014)</li>
                 <li className="border-b border-white/10 pb-2">🪪 Tarjeta de Entrenador Deportivo COCED 2026</li>
                 <li>📚 Historiador — Universidad de Caldas (2024)</li>
+              </ul>
+            </motion.div>
+
+            {/* Estefania */}
+            <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
+              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
+                <Image src="/profe estefania.jpeg" alt="Profe Estefania" width={96} height={96} className="object-cover w-full h-full object-top" />
+              </div>
+              <h3 className="font-bold text-lg text-white mb-1">Estefania</h3>
+              <span className="text-red-400 text-sm font-semibold block mb-4">Entrenadora</span>
+              <ul className="text-left space-y-2 text-gray-300 text-xs">
+                <li className="border-b border-white/10 pb-2">
+                  🎓 <span className="text-white font-semibold">Título:</span> Tecnóloga en Entrenamiento Deportivo — SENA
+                </li>
+                <li className="border-b border-white/10 pb-2">
+                  📚 <span className="text-white font-semibold">Estudios destacados:</span>
+                  <ul className="mt-1 space-y-1 pl-2">
+                    <li>• Informática y desarrollo empresarial</li>
+                    <li>• Formación en atención de eventos deportivos</li>
+                    <li>• Liderazgo en la actividad deportiva</li>
+                    <li>• Bases del entrenamiento deportivo</li>
+                    <li>• Legislación deportiva</li>
+                    <li>• Preparación física y entrenamiento deportivo</li>
+                    <li>• Seminario fútbol de salón y arbitraje</li>
+                    <li>• Fundamentos en administración deportiva</li>
+                    <li>• Emprendimiento deportivo</li>
+                    <li>• Cualidades físicas en el entrenamiento</li>
+                    <li>• Psicología Deportiva</li>
+                  </ul>
+                </li>
+                <li>
+                  🪪 Tarjeta de Entrenador Deportivo — <span className="text-white font-semibold">COCED</span>
+                  <p className="text-gray-400 text-xs mt-0.5">Colegio Colombiano de Entrenamiento Deportivo</p>
+                </li>
               </ul>
             </motion.div>
 
@@ -481,72 +544,73 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mt-10 bg-gradient-to-br from-yellow-900/60 via-gray-900 to-black text-white rounded-3xl p-8 border border-yellow-500/30 shadow-2xl relative overflow-hidden"
+            className="mt-10 bg-gradient-to-br from-yellow-900/60 via-gray-900 to-black text-white rounded-3xl overflow-hidden border border-yellow-500/30 shadow-2xl relative"
           >
-            <div className="absolute top-6 right-6 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black text-xs font-black px-4 py-1.5 rounded-full shadow-lg flex items-center gap-2 uppercase tracking-wider">
-              <FaTrophy className="text-sm" /> Presidente del Club Atlético Sucre
+            {/* Franja superior con badge */}
+            <div className="bg-gradient-to-r from-yellow-500/20 to-transparent px-6 py-4 border-b border-yellow-500/20 flex items-center justify-center gap-2">
+              <FaTrophy className="text-yellow-400 text-base" />
+              <span className="text-yellow-400 text-xs font-black uppercase tracking-widest">Presidente del Club Atlético Sucre</span>
+              <FaTrophy className="text-yellow-400 text-base" />
             </div>
 
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-              {/* Foto Norvey — objectPosition para mostrar más cuerpo */}
-              <div className="flex-shrink-0">
-                <div className="relative w-36 h-36">
-                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full blur-md opacity-60"></div>
-                  <div className="relative w-36 h-36 rounded-full overflow-hidden border-4 border-yellow-400 shadow-xl">
-                    <Image
-                      src="/norvey_alvarado.jpeg"
-                      alt="Norvey Alvarado Morales"
-                      width={144}
-                      height={144}
-                      className="object-cover w-full h-full"
-                      style={{ objectPosition: "center 15%" }}
-                    />
-                  </div>
+            {/* Foto centrada + nombre */}
+            <div className="flex flex-col items-center pt-8 pb-4 px-6">
+              <div className="relative w-32 h-32 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full blur-md opacity-70"></div>
+                <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-2xl">
+                  <Image
+                    src="/norvey_alvarado.jpeg"
+                    alt="Norvey Alvarado Morales"
+                    width={128}
+                    height={128}
+                    className="object-cover w-full h-full"
+                    style={{ objectPosition: "center 10%" }}
+                  />
                 </div>
               </div>
+              <h3 className="text-xl font-black text-white text-center">Norvey Alvarado Morales</h3>
+              <p className="text-yellow-300 font-semibold text-xs text-center mt-1 max-w-xs">
+                Lic. en Educación Física · Especialista en Pedagogía y Docencia Universitaria
+              </p>
+            </div>
 
-              {/* Info principal */}
-              <div className="flex-1">
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-1">Norvey Alvarado Morales</h3>
-                <p className="text-yellow-300 font-semibold text-sm mb-4">
-                  Lic. en Educación Física · Especialista en Pedagogía y Docencia Universitaria
-                </p>
-                <div className="grid md:grid-cols-3 gap-4 mt-4">
-                  <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
-                    <div className="flex items-center gap-2 mb-3">
-                      <FaGraduationCap className="text-yellow-400 text-lg" />
-                      <span className="text-yellow-400 font-bold text-sm">Perfil Académico</span>
-                    </div>
-                    <ul className="text-gray-300 text-xs space-y-2">
-                      <li className="border-b border-white/10 pb-2">🏅 <span className="text-white font-semibold">Licencias A y C</span> — Federación Colombiana de Fútbol</li>
-                      <li className="border-b border-white/10 pb-2">🏅 <span className="text-white font-semibold">Licencia B</span> — Escuela Nacional del Deporte De Cali Valle</li>
-                      <li>📋 Docente nombrado en propiedad por el <span className="text-white font-semibold">Magisterio de Nariño</span></li>
-                    </ul>
-                  </div>
-                  <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
-                    <div className="flex items-center gap-2 mb-3">
-                      <FaFutbol className="text-red-400 text-lg" />
-                      <span className="text-red-400 font-bold text-sm">Trayectoria Competitiva</span>
-                    </div>
-                    <ul className="text-gray-300 text-xs space-y-2">
-                      <li className="border-b border-white/10 pb-2">🏟️ Dirección técnica en el <span className="text-white font-semibold">Torneo Nacional Interclubes de Difútbol por más de 6 años</span></li>
-                      <li className="border-b border-white/10 pb-2">⚽ Coordinador Deportivo — <span className="text-white font-semibold">Club Atlético Sucre Nariño</span></li>
-                      <li>👦 Especialista en <span className="text-white font-semibold">categorías juveniles</span> y desarrollo integral del deportista</li>
-                    </ul>
-                  </div>
-                  <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
-                    <div className="flex items-center gap-2 mb-3">
-                      <FaChalkboardTeacher className="text-blue-400 text-lg" />
-                      <span className="text-blue-400 font-bold text-sm">Visión Estratégica</span>
-                    </div>
-                    <ul className="text-gray-300 text-xs space-y-2">
-                      <li className="border-b border-white/10 pb-2">🎯 Capacidad probada para organizar clubes <span className="text-white font-semibold">desde sus bases</span> hasta el nivel de competencia nacional</li>
-                      <li>🔥 Pasión por la <span className="text-white font-semibold">formación integral</span> del futbolista, fusionando pedagogía y deporte</li>
-                    </ul>
-                    <div className="mt-4 bg-gradient-to-r from-yellow-400/20 to-transparent p-3 rounded-xl border-l-2 border-yellow-400">
-                      <p className="text-yellow-300 font-bold text-xs">PASIÓN POR LA FORMACIÓN INTEGRAL</p>
-                    </div>
-                  </div>
+            {/* Bloques de info apilados — perfectos en mobile */}
+            <div className="px-4 pb-6 space-y-3">
+              <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                <div className="flex items-center gap-2 mb-3">
+                  <FaGraduationCap className="text-yellow-400 text-base" />
+                  <span className="text-yellow-400 font-bold text-sm">Perfil Académico</span>
+                </div>
+                <ul className="text-gray-300 text-xs space-y-2">
+                  <li className="border-b border-white/10 pb-2">🏅 <span className="text-white font-semibold">Licencias A y C</span> — Federación Colombiana de Fútbol</li>
+                  <li className="border-b border-white/10 pb-2">🏅 <span className="text-white font-semibold">Licencia B</span> — Escuela Nacional del Deporte De Cali Valle</li>
+                  <li>📋 Docente nombrado en propiedad por el <span className="text-white font-semibold">Magisterio de Nariño</span></li>
+                </ul>
+              </div>
+
+              <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                <div className="flex items-center gap-2 mb-3">
+                  <FaFutbol className="text-red-400 text-base" />
+                  <span className="text-red-400 font-bold text-sm">Trayectoria Competitiva</span>
+                </div>
+                <ul className="text-gray-300 text-xs space-y-2">
+                  <li className="border-b border-white/10 pb-2">🏟️ Dirección técnica en el <span className="text-white font-semibold">Torneo Nacional Interclubes de Difútbol</span> por más de 6 años</li>
+                  <li className="border-b border-white/10 pb-2">⚽ Coordinador Deportivo — <span className="text-white font-semibold">Club Atlético Sucre Nariño</span></li>
+                  <li>👦 Especialista en <span className="text-white font-semibold">categorías juveniles</span> y desarrollo integral del deportista</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                <div className="flex items-center gap-2 mb-3">
+                  <FaChalkboardTeacher className="text-blue-400 text-base" />
+                  <span className="text-blue-400 font-bold text-sm">Visión Estratégica</span>
+                </div>
+                <ul className="text-gray-300 text-xs space-y-2">
+                  <li className="border-b border-white/10 pb-2">🎯 Capacidad probada para organizar clubes <span className="text-white font-semibold">desde sus bases</span> hasta el nivel de competencia nacional</li>
+                  <li>🔥 Pasión por la <span className="text-white font-semibold">formación integral</span> del futbolista, fusionando pedagogía y deporte</li>
+                </ul>
+                <div className="mt-3 bg-gradient-to-r from-yellow-400/20 to-transparent p-3 rounded-xl border-l-2 border-yellow-400">
+                  <p className="text-yellow-300 font-bold text-xs">PASIÓN POR LA FORMACIÓN INTEGRAL</p>
                 </div>
               </div>
             </div>
@@ -572,7 +636,7 @@ export default function Home() {
             <div className="relative z-10 text-center pt-10 pb-6 px-6">
               <div className="flex items-center justify-center gap-3 mb-2">
                 <FaTrophy className="text-yellow-400 text-3xl animate-pulse" />
-                <h2 className="text-3xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">
+                <h2 className="text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">
                   ¡ENTRENADORA DEL MES!
                 </h2>
                 <FaTrophy className="text-yellow-400 text-3xl animate-pulse" />
@@ -659,9 +723,9 @@ export default function Home() {
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl shadow-lg"><FaUsers className="text-white text-2xl" /></div>
-                <h2 className="text-3xl md:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">Deberes de las Familias</h2>
+                <h2 className="text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">Deberes de las Familias</h2>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {[
                   { icon: FaClock, text: "Cumplir horarios", bg: "bg-blue-100", color: "text-blue-600" },
                   { icon: FaUserShield, text: "No intervenir tácticamente", bg: "bg-purple-100", color: "text-purple-600" },
@@ -686,38 +750,60 @@ export default function Home() {
       {/* Nuestro Club */}
       <section className="px-4 md:px-8 mt-16 mb-16">
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">Nuestro Club</h2>
-          <Swiper spaceBetween={30} slidesPerView={1.2} loop={true} className="px-4">
+          <h2 className="text-2xl font-black text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">Nuestro Club</h2>
+          <Swiper spaceBetween={16} slidesPerView={1.15} loop={true} className="px-2">
             <SwiperSlide>
-              <div className="h-80 bg-gradient-to-br from-black to-gray-800 rounded-3xl shadow-2xl overflow-hidden relative group cursor-pointer">
-                <Image src="/familia_sucre1.jpeg" alt="Familia Atletico Sucre" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="h-72 bg-gradient-to-br from-black to-gray-800 rounded-2xl shadow-2xl overflow-hidden relative">
+                <Image src="/familia_sucre1.jpeg" alt="Familia Atletico Sucre" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-6">
-                  <span className="text-white text-2xl font-bold">Familia Atletico Sucre</span>
-                  <p className="text-white/70 text-sm mt-2">Más que jugadores somos una familia, más que un equipo somos caballeros en la victoria y en la derrota</p>
+                <div className="absolute bottom-0 left-0 p-4">
+                  <span className="text-white text-lg font-bold block">Familia Atlético Sucre</span>
+                  <p className="text-white/70 text-xs mt-1">Más que jugadores somos una familia</p>
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="h-80 rounded-3xl shadow-2xl overflow-hidden relative group cursor-pointer">
-                <Image src="/equipo.jpeg" alt="Equipo Campeón" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="h-72 rounded-2xl shadow-2xl overflow-hidden relative">
+                <Image src="/equipo.jpeg" alt="Equipo" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-6">
-                  <span className="text-white text-2xl font-bold">Equipo Sub 7</span>
-                  <p className="text-white/70 text-sm mt-2">Jugamos con el corazón, entrenamos con disciplina y vivimos con respeto</p>
+                <div className="absolute bottom-0 left-0 p-4">
+                  <span className="text-white text-lg font-bold block">Equipo Sub 7</span>
+                  <p className="text-white/70 text-xs mt-1">Categoría 2018</p>
                 </div>
-                <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-bold">Categoria 2018</div>
+                <div className="absolute top-3 right-3 bg-yellow-500 text-black px-2 py-0.5 rounded-full text-xs font-bold">2018</div>
               </div>
             </SwiperSlide>
-            <SwiperSlide>
-              <div className="h-80 rounded-3xl shadow-2xl overflow-hidden relative group">
-                <video src="/entrenamiento.mp4" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" autoPlay muted loop playsInline />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-6">
-                  <span className="text-white text-2xl font-bold">Entrenamiento</span>
-                  <p className="text-white/70 text-sm mt-2">Metodología profesional</p>
+            {[
+              { src: "/categoria2009-10.jpeg", label: "Categoría 2009-10", badge: "2009-10" },
+              { src: "/categoria2011.jpeg", label: "Categoría 2011", badge: "2011" },
+              { src: "/categoria2012-13jpeg.jpeg", label: "Categoría 2012-13", badge: "2012-13" },
+              { src: "/categoria2014.jpeg", label: "Categoría 2014", badge: "2014" },
+              { src: "/categoria2014-15.jpeg", label: "Categoría 2014-15", badge: "2014-15" },
+              { src: "/categoria2015-16.jpeg", label: "Categoría 2015-16", badge: "2015-16" },
+              { src: "/categoria2017.jpeg", label: "Categoría 2017", badge: "2017" },
+              { src: "/categoria2018.jpeg", label: "Categoría 2018", badge: "2018" },
+            ].map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className="h-72 rounded-2xl shadow-2xl overflow-hidden relative">
+                  <Image src={item.src} alt={item.label} fill className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 p-4">
+                    <span className="text-white text-lg font-bold block">{item.label}</span>
+                    <p className="text-white/70 text-xs mt-1">Club Atlético Sucre</p>
+                  </div>
+                  <div className="absolute top-3 right-3 bg-red-600 text-white px-2 py-0.5 rounded-full text-xs font-bold">{item.badge}</div>
                 </div>
-                <div className="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1"><span>▶</span> ENTRENAMIENTO</div>
+              </SwiperSlide>
+            ))}
+            <SwiperSlide>
+              <div className="h-72 rounded-2xl shadow-2xl overflow-hidden relative">
+                <video src="/entrenamiento.mp4" className="w-full h-full object-cover" autoPlay muted loop playsInline />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-4">
+                  <span className="text-white text-lg font-bold block">Entrenamiento</span>
+                  <p className="text-white/70 text-xs mt-1">Metodología profesional</p>
+                </div>
+                <div className="absolute top-3 right-3 bg-red-600 text-white px-2 py-0.5 rounded-full text-xs font-bold flex items-center gap-1"><span>▶</span> LIVE</div>
               </div>
             </SwiperSlide>
           </Swiper>
