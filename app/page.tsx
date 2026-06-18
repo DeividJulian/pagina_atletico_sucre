@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaWhatsapp,
   FaTrophy,
@@ -27,12 +28,169 @@ import {
   FaSchool,
   FaGraduationCap,
   FaChalkboardTeacher,
+  FaChevronDown,
+  FaFemale,
 } from "react-icons/fa";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 
 export default function Home() {
+  const [openCoach, setOpenCoach] = useState<number | null>(null);
+
+  const coaches = [
+    {
+      name: "Juliana Estefania Pastas",
+      role: "Entrenadora",
+      img: "/juliana_pastas.jpeg",
+      imgPos: "center 20%",
+      content: (
+        <ul className="text-left space-y-2 text-gray-300 text-xs">
+          <li className="border-b border-white/10 pb-2">
+            🎓 <span className="text-white font-semibold">Título:</span> Tecnóloga en Entrenamiento Deportivo
+          </li>
+          <li className="border-b border-white/10 pb-2">
+            📚 <span className="text-white font-semibold">Estudios realizados:</span>
+            <ul className="mt-1 space-y-1 pl-2">
+              <li>• Bases del Entrenamiento Deportivo</li>
+              <li>• Cualidades Físicas en el Entrenamiento Deportivo</li>
+              <li>• Estructuración de Planes de Entrenamiento Deportivo</li>
+              <li>• Licencia C — Federación Colombiana de Fútbol</li>
+            </ul>
+          </li>
+          <li>
+            🪪 Tarjeta de Entrenador Deportivo — <span className="text-white font-semibold">COCED</span>
+            <p className="text-gray-400 text-xs mt-0.5">Colegio Colombiano de Entrenamiento Deportivo</p>
+          </li>
+        </ul>
+      ),
+    },
+    {
+      name: "Luis Carlos Benavides",
+      role: "Entrenador",
+      img: "/luis_benavides.jpeg",
+      imgPos: "top",
+      content: (
+        <ul className="text-left space-y-2 text-gray-300 text-xs">
+          <li className="border-b border-white/10 pb-2">🎓 Tecnólogo en Entrenamiento Deportivo — SENA (2014)</li>
+          <li className="border-b border-white/10 pb-2">🪪 Tarjeta de Entrenador Deportivo COCED 2026</li>
+          <li>📚 Historiador — Universidad de Caldas (2024)</li>
+        </ul>
+      ),
+    },
+    {
+      name: "Estefania",
+      role: "Entrenadora",
+      img: "/profe estefania.jpeg",
+      imgPos: "top",
+      content: (
+        <ul className="text-left space-y-2 text-gray-300 text-xs">
+          <li className="border-b border-white/10 pb-2">
+            🎓 <span className="text-white font-semibold">Título:</span> Tecnóloga en Entrenamiento Deportivo — SENA
+          </li>
+          <li className="border-b border-white/10 pb-2">
+            📚 <span className="text-white font-semibold">Estudios destacados:</span>
+            <ul className="mt-1 space-y-1 pl-2">
+              <li>• Informática y desarrollo empresarial</li>
+              <li>• Formación en atención de eventos deportivos</li>
+              <li>• Liderazgo en la actividad deportiva</li>
+              <li>• Bases del entrenamiento deportivo</li>
+              <li>• Legislación deportiva</li>
+              <li>• Preparación física y entrenamiento deportivo</li>
+              <li>• Seminario fútbol de salón y arbitraje</li>
+              <li>• Fundamentos en administración deportiva</li>
+              <li>• Emprendimiento deportivo</li>
+              <li>• Cualidades físicas en el entrenamiento</li>
+              <li>• Psicología Deportiva</li>
+            </ul>
+          </li>
+          <li>
+            🪪 Tarjeta de Entrenador Deportivo — <span className="text-white font-semibold">COCED</span>
+            <p className="text-gray-400 text-xs mt-0.5">Colegio Colombiano de Entrenamiento Deportivo</p>
+          </li>
+        </ul>
+      ),
+    },
+    {
+      name: "Juan Pablo Jiménez",
+      role: "Preparador de Porteros",
+      img: "/juan_pablo_jimenez.jpeg",
+      imgPos: "center",
+      content: (
+        <ul className="text-left space-y-2 text-gray-300 text-xs">
+          <li className="border-b border-white/10 pb-2">🏫 Estudiante — Dirección Técnica, Instituto Superior de Fútbol de Quito</li>
+          <li className="border-b border-white/10 pb-2">🧤 Amplia experiencia en preparación de porteros</li>
+          <li className="border-b border-white/10 pb-2">🏆 Diplomado en Seminario de Alto Liderazgo</li>
+          <li>⚽ Diplomado en Preparación Técnica, Táctica y Física</li>
+        </ul>
+      ),
+    },
+    {
+      name: "Cristhian David Villarreal Payán",
+      role: "Entrenador",
+      img: "/cristian.jpeg",
+      imgPos: "top",
+      content: (
+        <ul className="text-left space-y-2 text-gray-300 text-xs">
+          <li className="border-b border-white/10 pb-2">
+            🎓 <span className="text-white font-semibold">Título:</span> Licenciado en Educación Física y Deportes
+          </li>
+          <li className="border-b border-white/10 pb-2">
+            📚 <span className="text-white font-semibold">Estudios realizados:</span>
+            <ul className="mt-1 space-y-1 pl-2">
+              <li>• Tecnólogo en Entrenamiento Deportivo</li>
+              <li>• Diplomado en Preparación Física</li>
+              <li>• Seminario en Periodización Táctica</li>
+              <li>• Seminario en Revolución Táctica</li>
+              <li>• Seminario taller en Espacios Reducidos</li>
+              <li>• Seminario en Psicología Deportiva</li>
+              <li>• Seminario para Entrenadores Fútbol Base</li>
+              <li>• Manejo de Lesiones y Recuperación Física</li>
+              <li>• Licencia C — Federación Colombiana de Fútbol</li>
+            </ul>
+          </li>
+          <li>
+            🪪 Tarjeta de Entrenador Deportivo — <span className="text-white font-semibold">COCED</span>
+            <p className="text-gray-400 text-xs mt-0.5">Colegio Colombiano de Entrenamiento Deportivo</p>
+          </li>
+        </ul>
+      ),
+    },
+    {
+      name: "Jerson Javier Díaz Castro",
+      role: "Entrenador",
+      img: "/profe-jerson.jpeg",
+      imgPos: "top",
+      content: (
+        <ul className="text-left space-y-2 text-gray-300 text-xs">
+          <li className="border-b border-white/10 pb-2">
+            🎓 <span className="text-white font-semibold">Título:</span> Tecnólogo en Entrenamiento Deportivo
+          </li>
+          <li className="border-b border-white/10 pb-2">
+            📚 <span className="text-white font-semibold">Estudios realizados:</span>
+            <ul className="mt-1 space-y-1 pl-2">
+              <li>• Estructuración de Planes de Entrenamiento Deportivo</li>
+              <li>• Diplomado de Juego de Posición, Organización y Entrenamiento</li>
+              <li>• Diplomado en Espacios Reducidos aplicados al Fútbol Base</li>
+              <li>• Seminario en Psicología Deportiva</li>
+              <li>• Diplomado del Método Táctico Cognitivo en el Fútbol</li>
+              <li>• Diplomado en la Táctica y Técnica del Fútbol Formativo</li>
+              <li>• Seminario en Prevención de Lesiones y Recuperación Física</li>
+              <li>• Seminario en Nutrición Deportiva</li>
+              <li>• Seminario en Periodización Táctica</li>
+              <li>• Curso Internacional de Fútbol Estratégico</li>
+              <li>• Licencia C — Federación Colombiana de Fútbol</li>
+            </ul>
+          </li>
+          <li>
+            🪪 Tarjeta de Entrenador Deportivo — <span className="text-white font-semibold">COCED 2025</span>
+            <p className="text-gray-400 text-xs mt-0.5">Colegio Colombiano de Entrenamiento Deportivo</p>
+          </li>
+        </ul>
+      ),
+    },
+  ];
+
   return (
     <main className="relative bg-gradient-to-b from-gray-50 via-white to-gray-100 min-h-screen overflow-x-hidden text-gray-800">
       <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-r from-red-600/20 via-transparent to-black/20 blur-3xl -z-10"></div>
@@ -412,132 +570,71 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Tarjetas de entrenadores */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-8">
-
-            {/* Juliana Estefania Pastas */}
-            <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
-              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
-                <Image src="/juliana_pastas.jpeg" alt="Juliana Estefania Pastas" width={96} height={96} className="object-cover w-full h-full" style={{ objectPosition: "center 20%" }} />
-              </div>
-              <h3 className="font-bold text-lg text-white mb-1">Juliana Estefania Pastas</h3>
-              <span className="text-red-400 text-sm font-semibold block mb-4">Entrenadora</span>
-              <ul className="text-left space-y-2 text-gray-300 text-xs">
-                <li className="border-b border-white/10 pb-2">
-                  🎓 <span className="text-white font-semibold">Título:</span> Tecnóloga en Entrenamiento Deportivo
-                </li>
-                <li className="border-b border-white/10 pb-2">
-                  📚 <span className="text-white font-semibold">Estudios realizados:</span>
-                  <ul className="mt-1 space-y-1 pl-2">
-                    <li>• Bases del Entrenamiento Deportivo</li>
-                    <li>• Cualidades Físicas en el Entrenamiento Deportivo</li>
-                    <li>• Estructuración de Planes de Entrenamiento Deportivo</li>
-                    <li>• Licencia C — Federación Colombiana de Fútbol</li>
-                  </ul>
-                </li>
-                <li>
-                  🪪 Tarjeta de Entrenador Deportivo — <span className="text-white font-semibold">COCED</span>
-                  <p className="text-gray-400 text-xs mt-0.5">Colegio Colombiano de Entrenamiento Deportivo</p>
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Luis Carlos Benavides */}
-            <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
-              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
-                <Image src="/luis_benavides.jpeg" alt="Luis Carlos Benavides" width={96} height={96} className="object-cover w-full h-full object-top" />
-              </div>
-              <h3 className="font-bold text-lg text-white mb-1">Luis Carlos Benavides</h3>
-              <span className="text-red-400 text-sm font-semibold block mb-4">Entrenador</span>
-              <ul className="text-left space-y-2 text-gray-300 text-xs">
-                <li className="border-b border-white/10 pb-2">🎓 Tecnólogo en Entrenamiento Deportivo — SENA (2014)</li>
-                <li className="border-b border-white/10 pb-2">🪪 Tarjeta de Entrenador Deportivo COCED 2026</li>
-                <li>📚 Historiador — Universidad de Caldas (2024)</li>
-              </ul>
-            </motion.div>
-
-            {/* Estefania */}
-            <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
-              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
-                <Image src="/profe estefania.jpeg" alt="Profe Estefania" width={96} height={96} className="object-cover w-full h-full object-top" />
-              </div>
-              <h3 className="font-bold text-lg text-white mb-1">Estefania</h3>
-              <span className="text-red-400 text-sm font-semibold block mb-4">Entrenadora</span>
-              <ul className="text-left space-y-2 text-gray-300 text-xs">
-                <li className="border-b border-white/10 pb-2">
-                  🎓 <span className="text-white font-semibold">Título:</span> Tecnóloga en Entrenamiento Deportivo — SENA
-                </li>
-                <li className="border-b border-white/10 pb-2">
-                  📚 <span className="text-white font-semibold">Estudios destacados:</span>
-                  <ul className="mt-1 space-y-1 pl-2">
-                    <li>• Informática y desarrollo empresarial</li>
-                    <li>• Formación en atención de eventos deportivos</li>
-                    <li>• Liderazgo en la actividad deportiva</li>
-                    <li>• Bases del entrenamiento deportivo</li>
-                    <li>• Legislación deportiva</li>
-                    <li>• Preparación física y entrenamiento deportivo</li>
-                    <li>• Seminario fútbol de salón y arbitraje</li>
-                    <li>• Fundamentos en administración deportiva</li>
-                    <li>• Emprendimiento deportivo</li>
-                    <li>• Cualidades físicas en el entrenamiento</li>
-                    <li>• Psicología Deportiva</li>
-                  </ul>
-                </li>
-                <li>
-                  🪪 Tarjeta de Entrenador Deportivo — <span className="text-white font-semibold">COCED</span>
-                  <p className="text-gray-400 text-xs mt-0.5">Colegio Colombiano de Entrenamiento Deportivo</p>
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Juan Pablo Jiménez */}
-            <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
-              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
-                <Image src="/juan_pablo_jimenez.jpeg" alt="Juan Pablo Jiménez" width={96} height={96} className="object-cover w-full h-full" />
-              </div>
-              <h3 className="font-bold text-lg text-white mb-1">Juan Pablo Jiménez</h3>
-              <span className="text-red-400 text-sm font-semibold block mb-4">Preparador de Porteros</span>
-              <ul className="text-left space-y-2 text-gray-300 text-xs">
-                <li className="border-b border-white/10 pb-2">🏫 Estudiante — Dirección Técnica, Instituto Superior de Fútbol de Quito</li>
-                <li className="border-b border-white/10 pb-2">🧤 Amplia experiencia en preparación de porteros</li>
-                <li className="border-b border-white/10 pb-2">🏆 Diplomado en Seminario de Alto Liderazgo</li>
-                <li>⚽ Diplomado en Preparación Técnica, Táctica y Física</li>
-              </ul>
-            </motion.div>
-
-            {/* Cristhian David Villarreal */}
-            <motion.div whileHover={{ scale: 1.03, y: -5 }} className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 border border-white/10 shadow-xl text-center">
-              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-red-500 shadow-lg">
-                <Image src="/cristian.jpeg" alt="Cristhian David Villarreal Payan" width={96} height={96} className="object-cover w-full h-full object-top" />
-              </div>
-              <h3 className="font-bold text-lg text-white mb-1">Cristhian David Villarreal Payán</h3>
-              <span className="text-red-400 text-sm font-semibold block mb-4">Entrenador</span>
-              <ul className="text-left space-y-2 text-gray-300 text-xs">
-                <li className="border-b border-white/10 pb-2">
-                  🎓 <span className="text-white font-semibold">Título:</span> Licenciado en Educación Física y Deportes
-                </li>
-                <li className="border-b border-white/10 pb-2">
-                  📚 <span className="text-white font-semibold">Estudios realizados:</span>
-                  <ul className="mt-1 space-y-1 pl-2">
-                    <li>• Tecnólogo en Entrenamiento Deportivo</li>
-                    <li>• Diplomado en Preparación Física</li>
-                    <li>• Seminario en Periodización Táctica</li>
-                    <li>• Seminario en Revolución Táctica</li>
-                    <li>• Seminario taller en Espacios Reducidos</li>
-                    <li>• Seminario en Psicología Deportiva</li>
-                    <li>• Seminario para Entrenadores Fútbol Base</li>
-                    <li>• Manejo de Lesiones y Recuperación Física</li>
-                    <li>• Licencia C — Federación Colombiana de Fútbol</li>
-                  </ul>
-                </li>
-                <li>
-                  🪪 Tarjeta de Entrenador Deportivo — <span className="text-white font-semibold">COCED</span>
-                  <p className="text-gray-400 text-xs mt-0.5">Colegio Colombiano de Entrenamiento Deportivo</p>
-                </li>
-              </ul>
-            </motion.div>
-
+          {/* Acordeón de entrenadores — grilla compacta, toca para expandir */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-8">
+            {coaches.map((coach, index) => (
+              <button
+                key={index}
+                onClick={() => setOpenCoach(openCoach === index ? null : index)}
+                className={`flex flex-col items-center p-3 rounded-2xl border transition-all duration-300 ${
+                  openCoach === index
+                    ? "bg-gradient-to-br from-red-700 to-red-900 border-yellow-400/60 shadow-lg scale-105"
+                    : "bg-gradient-to-br from-gray-900 to-black border-white/10 hover:border-white/30"
+                }`}
+              >
+                <div className={`w-16 h-16 rounded-full overflow-hidden border-2 shadow-md ${openCoach === index ? "border-yellow-400" : "border-red-500"}`}>
+                  <Image
+                    src={coach.img}
+                    alt={coach.name}
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                    style={coach.imgPos !== "top" && coach.imgPos !== "center" ? { objectPosition: coach.imgPos } : undefined}
+                  />
+                </div>
+                <span className="text-white text-xs font-bold mt-2 text-center leading-tight">{coach.name.split(" ").slice(0, 2).join(" ")}</span>
+                <span className="text-red-400 text-[10px] font-medium">{coach.role}</span>
+                <FaChevronDown className={`text-white/40 text-xs mt-1.5 transition-transform duration-300 ${openCoach === index ? "rotate-180 text-yellow-400" : ""}`} />
+              </button>
+            ))}
           </div>
+
+          {/* Panel expandido con la info completa del profesor seleccionado */}
+          <AnimatePresence>
+            {openCoach !== null && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                <div className="mt-4 bg-gradient-to-br from-gray-900 to-black rounded-2xl p-6 border border-yellow-400/30 shadow-xl">
+                  <div className="flex items-center gap-4 mb-4 pb-4 border-b border-white/10">
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-yellow-400 shadow-md flex-shrink-0">
+                      <Image
+                        src={coaches[openCoach].img}
+                        alt={coaches[openCoach].name}
+                        width={64}
+                        height={64}
+                        className="object-cover w-full h-full"
+                        style={coaches[openCoach].imgPos !== "top" && coaches[openCoach].imgPos !== "center" ? { objectPosition: coaches[openCoach].imgPos } : undefined}
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg text-white">{coaches[openCoach].name}</h3>
+                      <span className="text-red-400 text-sm font-semibold">{coaches[openCoach].role}</span>
+                    </div>
+                  </div>
+                  {coaches[openCoach].content}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <p className="text-center text-gray-400 text-xs mt-4 flex items-center justify-center gap-1.5">
+            <FaChevronDown className="text-xs" /> Toca a un entrenador para ver su perfil completo
+          </p>
 
           {/* Presidente del Club — Norvey Alvarado */}
           <motion.div
@@ -619,7 +716,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Entrenadora del Mes — Juliana Pastas */}
+      {/* Entrenadora del Mes — Profe Estefania */}
       <section className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -637,7 +734,7 @@ export default function Home() {
               <div className="flex items-center justify-center gap-3 mb-2">
                 <FaTrophy className="text-yellow-400 text-3xl animate-pulse" />
                 <h2 className="text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">
-                  ¡ENTRENADORA DEL MES!
+                  ¡DT DEL MES!
                 </h2>
                 <FaTrophy className="text-yellow-400 text-3xl animate-pulse" />
               </div>
@@ -647,18 +744,18 @@ export default function Home() {
             {/* Contenido principal */}
             <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8 px-8 pb-10">
 
-              {/* Foto Juliana grande */}
+              {/* Foto Estefania grande */}
               <div className="flex-shrink-0 flex flex-col items-center">
                 <div className="relative w-44 h-44">
                   <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-400 rounded-full blur-lg opacity-70"></div>
                   <div className="relative w-44 h-44 rounded-full overflow-hidden border-4 border-yellow-400 shadow-2xl">
                     <Image
-                      src="/juliana_pastas.jpeg"
-                      alt="Juliana Estefania Pastas"
+                      src="/profe-estefania-entrenadora.jpeg"
+                      alt="Profe Estefania"
                       width={176}
                       height={176}
-                      className="object-cover w-full h-full scale-90"
-                      style={{ objectPosition: "center 25%" }}
+                      className="object-cover w-full h-full"
+                      style={{ objectPosition: "center 20%" }}
                     />
                   </div>
                   {/* Badge estrella */}
@@ -666,39 +763,29 @@ export default function Home() {
                     <FaStar className="text-xs" /> DESTACADA
                   </div>
                 </div>
-                <p className="mt-5 text-center font-black text-lg text-white">Juliana Estefania Pastas</p>
+                <p className="mt-5 text-center font-black text-lg text-white">Profe Estefania</p>
                 <p className="text-red-400 text-sm font-semibold">Entrenadora</p>
               </div>
 
               {/* Texto del reconocimiento */}
               <div className="flex-1 space-y-5">
                 <p className="text-gray-200 leading-relaxed text-base">
-                  Hoy queremos tomarnos un momento para reconocer el trabajo, la pasión y la entrega de una profesional excepcional.
-                  El <span className="text-white font-bold">Club de Fútbol Atlético Sucre</span> felicita con mucho orgullo a la{" "}
-                  <span className="text-yellow-400 font-bold">Profe Juliana Pastas</span> como nuestra entrenadora destacada. 👏🌟
+                  ¡Muchas felicidades, Profe! Es un verdadero honor para toda la familia del{" "}
+                  <span className="text-white font-bold">Club Atlético Sucre</span> celebrar este reconocimiento como el{" "}
+                  <span className="text-yellow-400 font-bold">DT del mes</span>. 👏🌟
                 </p>
-
-                <p className="text-gray-300 text-sm font-semibold uppercase tracking-wider">Queremos resaltar su:</p>
 
                 <div className="space-y-3">
                   <div className="flex items-start gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
-                    <span className="text-xl mt-0.5">📋</span>
+                    <span className="text-xl mt-0.5">❤️</span>
                     <div>
-                      <p className="font-bold text-white text-sm">Dedicación y Compromiso</p>
-                      <p className="text-gray-300 text-xs mt-1">Su entrega incondicional con cada uno de sus deportistas en cada entrenamiento.</p>
+                      <p className="text-gray-300 text-xs">Queremos agradecerte profundamente por ponerle el corazón a cada entrenamiento, por tu guía constante y por la pasión inagotable que transmites en cada una de tus funciones.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
-                    <span className="text-xl mt-0.5">🕒</span>
+                    <span className="text-xl mt-0.5">🌟</span>
                     <div>
-                      <p className="font-bold text-white text-sm">Puntualidad y Claridad</p>
-                      <p className="text-gray-300 text-xs mt-1">Por su excelente gestión y orden al preparar minuciosamente los horarios de entrenamiento, manteniendo siempre informados a sus grupos a cargo.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
-                    <span className="text-xl mt-0.5">⚽</span>
-                    <div>
-                      <p className="text-gray-300 text-xs">Por estar siempre al pendiente, con el corazón y el profesionalismo que la caracteriza.</p>
+                      <p className="text-gray-300 text-xs">Eres una pieza fundamental en nuestro crecimiento y un ejemplo de entrega para todos.</p>
                     </div>
                   </div>
                 </div>
@@ -706,7 +793,7 @@ export default function Home() {
                 {/* Mensaje final */}
                 <div className="bg-gradient-to-r from-yellow-400/20 to-transparent p-4 rounded-2xl border-l-4 border-yellow-400 mt-4">
                   <p className="text-yellow-200 font-semibold text-sm leading-relaxed">
-                    Gracias, Profe Juliana, por formar campeones para la vida con tanto amor y disciplina. Su labor engrandece a nuestra institución. 🧭📈⚽
+                    Gracias por elevar nuestro nivel y acompañarnos en este camino con tanta dedicación. 🧭📈⚽
                   </p>
                 </div>
               </div>
@@ -807,6 +894,32 @@ export default function Home() {
               </div>
             </SwiperSlide>
           </Swiper>
+        </motion.div>
+      </section>
+
+      {/* Equipo Femenino */}
+      <section className="px-4 md:px-8 mt-16 mb-16">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-5xl mx-auto">
+          <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-6 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
+            <div className="absolute -right-20 -top-20 w-80 h-80 bg-gradient-to-br from-pink-500/5 to-red-500/5 rounded-full blur-3xl"></div>
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-gradient-to-br from-pink-600 to-red-700 rounded-2xl shadow-lg"><FaFemale className="text-white text-2xl" /></div>
+                <h2 className="text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-red-700">Equipo Femenino</h2>
+              </div>
+              <p className="text-gray-700 leading-relaxed text-base mb-6">
+                Nuestras jugadoras representan con orgullo al Club Atlético Sucre, combinando talento, disciplina y pasión por el fútbol en cada entrenamiento y competencia.
+              </p>
+              <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl">
+                <Image src="/equipo-niñas.jpeg" alt="Equipo Femenino Atlético Sucre" fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-5">
+                  <span className="text-white text-xl font-bold block">Fútbol Femenino Atlético Sucre</span>
+                  <p className="text-white/80 text-sm mt-1">Talento y pasión sin límites</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </section>
 
