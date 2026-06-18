@@ -29,7 +29,6 @@ import {
   FaGraduationCap,
   FaChalkboardTeacher,
   FaChevronDown,
-  FaFemale,
 } from "react-icons/fa";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -884,6 +883,17 @@ export default function Home() {
             ))}
             <SwiperSlide>
               <div className="h-72 rounded-2xl shadow-2xl overflow-hidden relative">
+                <Image src="/equipo-niñas.jpeg" alt="Equipo Femenino Atlético Sucre" fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-4">
+                  <span className="text-white text-lg font-bold block">Equipo Femenino</span>
+                  <p className="text-white/70 text-xs mt-1">Talento y pasión sin límites</p>
+                </div>
+                <div className="absolute top-3 right-3 bg-pink-600 text-white px-2 py-0.5 rounded-full text-xs font-bold">Femenino</div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="h-72 rounded-2xl shadow-2xl overflow-hidden relative">
                 <video src="/entrenamiento.mp4" className="w-full h-full object-cover" autoPlay muted loop playsInline />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-4">
@@ -894,32 +904,6 @@ export default function Home() {
               </div>
             </SwiperSlide>
           </Swiper>
-        </motion.div>
-      </section>
-
-      {/* Equipo Femenino */}
-      <section className="px-4 md:px-8 mt-16 mb-16">
-        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-6 md:p-10 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
-            <div className="absolute -right-20 -top-20 w-80 h-80 bg-gradient-to-br from-pink-500/5 to-red-500/5 rounded-full blur-3xl"></div>
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-gradient-to-br from-pink-600 to-red-700 rounded-2xl shadow-lg"><FaFemale className="text-white text-2xl" /></div>
-                <h2 className="text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-red-700">Equipo Femenino</h2>
-              </div>
-              <p className="text-gray-700 leading-relaxed text-base mb-6">
-                Nuestras jugadoras representan con orgullo al Club Atlético Sucre, combinando talento, disciplina y pasión por el fútbol en cada entrenamiento y competencia.
-              </p>
-              <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-xl">
-                <Image src="/equipo-niñas.jpeg" alt="Equipo Femenino Atlético Sucre" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-5">
-                  <span className="text-white text-xl font-bold block">Fútbol Femenino Atlético Sucre</span>
-                  <p className="text-white/80 text-sm mt-1">Talento y pasión sin límites</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </motion.div>
       </section>
 
