@@ -715,7 +715,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Entrenadora del Mes — Profe Estefania */}
+      {/* DT del Mes — Profe Luis Carlos */}
       <section className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -743,14 +743,14 @@ export default function Home() {
             {/* Contenido principal */}
             <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8 px-8 pb-10">
 
-              {/* Foto Estefania grande */}
+              {/* Foto Luis Carlos grande */}
               <div className="flex-shrink-0 flex flex-col items-center">
                 <div className="relative w-44 h-44">
                   <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-400 rounded-full blur-lg opacity-70"></div>
                   <div className="relative w-44 h-44 rounded-full overflow-hidden border-4 border-yellow-400 shadow-2xl">
                     <Image
-                      src="/profe-estefania-entrenadora.jpeg"
-                      alt="Profe Estefania"
+                      src="/luis-carlos.jpeg"
+                      alt="Profe Luis Carlos"
                       width={176}
                       height={176}
                       className="object-cover w-full h-full"
@@ -759,11 +759,11 @@ export default function Home() {
                   </div>
                   {/* Badge estrella */}
                   <div className="absolute -bottom-2 -right-2 bg-yellow-400 text-black text-xs font-black px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
-                    <FaStar className="text-xs" /> DESTACADA
+                    <FaStar className="text-xs" /> DESTACADO
                   </div>
                 </div>
-                <p className="mt-5 text-center font-black text-lg text-white">Profe Estefania</p>
-                <p className="text-red-400 text-sm font-semibold">Entrenadora</p>
+                <p className="mt-5 text-center font-black text-lg text-white">Profe Luis Carlos</p>
+                <p className="text-red-400 text-sm font-semibold">Entrenador</p>
               </div>
 
               {/* Texto del reconocimiento */}
