@@ -715,7 +715,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* DT del Mes — Profe Luis Carlos */}
+      {/* DT del Mes — Profe */}
       <section className="px-4 md:px-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -743,18 +743,18 @@ export default function Home() {
             {/* Contenido principal */}
             <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-8 px-8 pb-10">
 
-              {/* Foto Luis Carlos grande */}
+              {/* Foto Profe Jerson grande */}
               <div className="flex-shrink-0 flex flex-col items-center">
                 <div className="relative w-44 h-44">
                   <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-400 rounded-full blur-lg opacity-70"></div>
                   <div className="relative w-44 h-44 rounded-full overflow-hidden border-4 border-yellow-400 shadow-2xl">
                     <Image
-                      src="/luis-carlos.jpeg"
-                      alt="Profe Luis Carlos"
+                      src="/profe-septiembre.jpeg"
+                      alt="Profe Jerson Díaz"
                       width={176}
                       height={176}
                       className="object-cover w-full h-full"
-                      style={{ objectPosition: "center 20%" }}
+                      style={{ objectPosition: "top" }}
                     />
                   </div>
                   {/* Badge estrella */}
@@ -762,29 +762,38 @@ export default function Home() {
                     <FaStar className="text-xs" /> DESTACADO
                   </div>
                 </div>
-                <p className="mt-5 text-center font-black text-lg text-white">Profe Luis Carlos</p>
+                <p className="mt-5 text-center font-black text-lg text-white">Profe Jerson Díaz</p>
                 <p className="text-red-400 text-sm font-semibold">Entrenador</p>
               </div>
 
               {/* Texto del reconocimiento */}
               <div className="flex-1 space-y-5">
                 <p className="text-gray-200 leading-relaxed text-base">
-                  ¡Muchas felicidades, Profe! Es un verdadero honor para toda la familia del{" "}
-                  <span className="text-white font-bold">Club Atlético Sucre</span> celebrar este reconocimiento como el{" "}
-                  <span className="text-yellow-400 font-bold">DT del mes</span>. 👏🌟
+                  🏆⚽ <span className="text-white font-bold">FELICITACIONES, PROFE JERSON DÍAZ</span> ❤️💙
+                </p>
+
+                <p className="text-gray-200 leading-relaxed text-base">
+                  Hoy queremos reconocer y felicitar de corazón a nuestro <span className="text-white font-bold">Profe Jerson Díaz</span>, quien ha sido elegido como{" "}
+                  <span className="text-yellow-400 font-bold">🏅 MEJOR ENTRENADOR DEL MES</span>. 👏⚽
                 </p>
 
                 <div className="space-y-3">
                   <div className="flex items-start gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+                    <span className="text-xl mt-0.5">🌟</span>
+                    <div>
+                      <p className="text-gray-300 text-xs">Este reconocimiento es fruto de su dedicación, compromiso, disciplina y pasión por formar a nuestros deportistas. 👏⚽</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
                     <span className="text-xl mt-0.5">❤️</span>
                     <div>
-                      <p className="text-gray-300 text-xs">Queremos agradecerte profundamente por ponerle el corazón a cada entrenamiento, por tu guía constante y por la pasión inagotable que transmites en cada una de tus funciones.</p>
+                      <p className="text-gray-300 text-xs">Gracias, Profe Jerson, por cada entrenamiento, por la paciencia, por motivar a nuestros niños y por dejar siempre lo mejor de usted dentro y fuera de la cancha.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
                     <span className="text-xl mt-0.5">🌟</span>
                     <div>
-                      <p className="text-gray-300 text-xs">Eres una pieza fundamental en nuestro crecimiento y un ejemplo de entrega para todos.</p>
+                      <p className="text-gray-300 text-xs">Su desempeño y su manera de trabajar son motivo de orgullo para toda la familia Atlético Sucre.</p>
                     </div>
                   </div>
                 </div>
@@ -792,7 +801,10 @@ export default function Home() {
                 {/* Mensaje final */}
                 <div className="bg-gradient-to-r from-yellow-400/20 to-transparent p-4 rounded-2xl border-l-4 border-yellow-400 mt-4">
                   <p className="text-yellow-200 font-semibold text-sm leading-relaxed">
-                    Gracias por elevar nuestro nivel y acompañarnos en este camino con tanta dedicación. 🧭📈⚽
+                    Felicitaciones por este merecido reconocimiento 🏆👏
+                  </p>
+                  <p className="text-yellow-200 font-semibold text-sm leading-relaxed mt-2">
+                    En Atlético Sucre enseñamos de corazón a corazón. ❤️💙
                   </p>
                 </div>
               </div>
